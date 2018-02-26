@@ -63,7 +63,29 @@ Pastor et al. \cite{Praun2001} präsentieren ein Technik unter Ausnutzung der Gr
 \subsection{Gradient}
 \todo{TO-DO: Bernst und Englich}
 \subsection{Erste und Zweite Fundamentalform}
-\todo{TO-DO: Bernst und Englich}
+\label{fundamental}
+Gegeben sei eine durch eine offene Abbildung definierte Oberfläche $S : D \subset R^{2} \longrightarrow R^{3}$ mit den Parametern $u$ und $v$. Dann heißt die Abbildung I, die jedem Punkt $p \in S$ die Einschränkung des euklidischen Skalarproduktes auf die Tangentialebene $T_{p}S$ zuordnet \textit{Erste Fundamentalform} von S
+\begin{equation}
+\resizebox{.9\hsize}{!}{$
+I: \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}, (w_{1},w_{2}) \mapsto E(u,v)^{2} + 2F(u,v) + G(u,v)^{2}$}
+\end{equation}	
+Diese Form erlaubt es, Messungen innerhalb der Oberfläche vorzunehmen. Dazu gehören das Bestimmen der Länge von Kurven, der Winkel von Tangentenvektoren und des Flächeninhalts bestimmter Teilbereiche.
+\\
+\\
+Für die in Abschnitt \ref{defpel} beschriebene Berechnung des Gradienten $\nabla f$ werden nunmehr explizit die Koeffizienten E, F und G benötigt. Diese Berechnen sich durch die partiellen Ableitungen nach den Parametern $u$ und $v$.
+
+\begin{equation}
+E(u,v) = |\frac{\partial S}{\partial u}(u,v)|^{2},
+\end{equation}	
+\begin{equation}
+F(u,v) = \frac{\partial S}{\partial u}(u,v) \cdot \frac{\partial S}{\partial v}(u,v),
+\end{equation}	
+\begin{equation}
+G(u,v) = |\frac{\partial S}{\partial v}(u,v)|^{2}
+\end{equation}	
+\\
+\\	
+\todo{TO-DO: Bernst Zweite}
 \subsection{Normalschnitt und Normalkrümmung}
 \label{normalschnitt}
 Der Normalschnitt an einem Punkt $p$ auf einer regulären Fläche im $\mathbb{R}^3$ ist die Kurve, die sich aus dem Schnitt der Oberfläche und der Ebene ergibt, die von einem Tangentialvektor $\vec{v}$ und der Normale $\vec{n}$ an diesem Punkt aufgespannt wird.\\\\Die Krümmung der ebenen Kurve, die der Normalschnitt liefert, nennt man Normalkrümmung. Zu beachten ist hierbei, dass die Normalkrümmung an einem Punkt einer Tangentialrichtung, also der Richtung des Normalschnitts, zugeordnet wird. 
@@ -72,12 +94,9 @@ Der Normalschnitt an einem Punkt $p$ auf einer regulären Fläche im $\mathbb{R}
 \section{Konzepte / Algorithmen}
 \todo{TO-DO: Bernst und Englich - kurze Einleitung Konzepte}
 
-\subsection{Demarcating Curves}
-\todo{TO-DO: Einleitung Demarcating Curves}
-
-\subsubsection{Motivation}
-\label{motivationdem}
+\subsection{Demarcating Curves}\label{demcurvlabel}
 Häufig reicht die reine Betrachtung eines Objektes nicht aus, um einen ausreichenden Eindruck über dessen Form und Beschaffenheit zu gewinnen. Während der Mensch mit dem Tastsinn ein weiteres Werkzeug zur Untersuchung der Oberfläche besitzt, werden in der Computergrafik Feature Lines auf dem Objekt gezeichnet. Da unterschiedliche Algorithmen auf einem Objekt zu ganz unterschiedliche Strukturen hervorheben können, existiert inzwischen eine große Menge an Methoden, die für unterschiedliche Anwendungsgebiete mal mehr, mal weniger gut geeignet sind. Kolomenkin et al. \cite{Demarcating} stellen mit den Demarcating Curves eine neue Art von Kurven vor, die vor allem auf dem Gebiet der Archäologie dabei helfen soll, Strukturen auf gefundenen Relikten sichtbar zu machen und diese zu digitalisieren. 
+
 \subsubsection{Konzept und Ablauf}
 
 \todo{TO-DO: Bernst}
@@ -86,37 +105,34 @@ Häufig reicht die reine Betrachtung eines Objektes nicht aus, um einen ausreich
 \subsubsection{Berechnung der Kurven}
 \todo{TO-DO: Bernst}
 \subsection{Photic Extremum Lines}
-\todo{TO-DO: Einleitung PEL}
-\subsubsection{Motivation}
-\label{motivationpel}
-Die Beleuchtung spielt bei der menschlichen Wahrnehmung eine extrem große Rolle. Große Kontrastunterschiede sind dabei entscheidend zum Erkennen eines Objekts. Sie lassen unser Gehirn auf die Silhouette und die innere Struktur des betrachteten Objekts schließen. Die meisten Methoden, die Feature Lines auf 3D-Objekten suchen, betrachten dabei nur die Geometrie; das Verhalten unter einfallendem Licht wird ignoriert. Deshalb werden von der Gruppe um Xie et al. die Photic Extremum Lines (kurz: PELs) eingeführt, die sich die Beleuchtung zum Finden von Feature Lines zu Nutze macht.  
+Die Beleuchtung spielt bei der menschlichen Wahrnehmung eine extrem große Rolle. Große Kontrastunterschiede sind dabei entscheidend zum Erkennen eines Objekts. Sie lassen unser Gehirn auf die Silhouette und die innere Struktur des betrachteten Objekts schließen. Die meisten Methoden, die Feature Lines auf 3D-Objekten suchen, betrachten dabei nur die Geometrie; das Verhalten unter einfallendem Licht wird ignoriert. Deshalb werden von der Gruppe um Xie et al. die Photic Extremum Lines (kurz: PELs) eingeführt, die sich die Beleuchtung zum Finden von Feature Lines zu Nutze macht \todo{TO-DO: Quelle} .
+\label{pellabel} 
 \subsubsection{Konzept und Ablauf}
 \label{defpel}
 Die Grundlage der Photic Extremum Lines stellt eine Beobachtung von A. Yuille dar, die Folgendes besagt: Untersucht man die zweite partielle Ableitung eines Schwarz/Weiss-Fotos eines Objekts in Richtung des Gradienten auf Nullstellen, so liegen diese in der Nähe der Hügel und Täler des Objekts. Diese beinhalten wiederum wichtige Informationen zur äußeren und inneren Beschaffenheit des Objekts. Xie et al. übertragen diese Beobachtung auf 3D-Oberflächen. Das Finden der Nullstellen wird also nicht auf einem Abbild des Objekts, sondern auf der beleuchteten Geometrie vollzogen.
 Das grundlegende Konzept des Algorithmus lässt sich in vier Schritte unterteilen:
 \begin{itemize}
-\item[1.] Berechnung des Gradienten für jeden beleuchteten Vektor
-\item[2.] Berechnung der zweiten partiellen Ableitung in Richtung des Gradienten jedes Vektors
-\item[3.] Finden der Nullstellen und Filtern der Maxima
-\end{itemize}
-Zur Berechnung der Nullstellen gilt die Annahme, dass die Beleuchtungsfunktion $f$ drei-mal stetig differenzierbar sei (benötigt wird die dritte partielle Ableitung). \\\\
+\item[1.] Optional: Vorverarbeitung (Glättung der Normalen)
+\item[2.] Berechnung des Gradienten für jeden beleuchteten Vektor
+\item[3.] Berechnung der zweiten partiellen Ableitung in Richtung des Gradienten jedes Vektors
+\item[4.] Finden der Nullstellen und Filtern der Maxima
+
+\end{itemize} 
+
+Zur Berechnung der Nullstellen gilt die Annahme, dass die Beleuchtungsfunktion $f$ dreimal stetig differenzierbar sei (benötigt wird die dritte partielle Ableitung). \\\\
 Der Gradient eines Punktes einer Oberfläche $S : D \subset R^{2} \longrightarrow R^{3}$, die mit der Beleuchtungsfunktion $f$ beleuchtet wurde, berechnet sich durch:
 \begin{equation}
 \nabla f = \frac{ f_{ u }G - f_{ v }F }{EG - F^{ 2 }  }S_{ u } + \frac{ f_{ v }E - f_{ u }F }{EG - F^{ 2 } } S_{ v }  
 	\label{eq:gradientf}
 \end{equation}
-$S_{ u } $ und $S_{ v }$ stehen dabei für die Tangentenvektoren des Punktes. Die jeweiligen Koeffizienten setzen sich aus den partiellen Ableitungen $f_{ u }$ und $f_{ v }$ und den Koeffizienten der zweiten Fundamentalform E,G und F des Objekts (der Oberfläche S) zusammen.
-Diese Definition geht einher mit der Formel zur Berechnung des Gradienten auf Bildern (2D):
-\begin{equation}
-\nabla f =  \left( \frac{ \partial f}{\partial x} \frac{ \partial f}{\partial y} \right )
-	\label{eq:gradient2D}
-\end{equation}
+$S_{ u } $ und $S_{ v }$ stehen dabei für die Tangentenvektoren des Punktes. Die jeweiligen Koeffizienten setzen sich aus den partiellen Ableitungen $f_{ u }$ und $f_{ v }$ und den Koeffizienten der zweiten Fundamentalform E,G und F des Objekts (der Oberfläche S) zusammen. Die Formeln zur Berechnung dieser Koeffizienten finden sich in Abschnitt \ref{fundamental}.
+
 Gegeben den Gradienten $\nabla f$, kann nun die zweite Partielle Ableitung in dessen Richtung berechnet werden. Wichtig sind die Nullstellen (Extrema) der Funktion:
 \begin{equation}
 D_{w}||\nabla f || = 0
 	\label{eq:dw}
 \end{equation}
-Wie in Abschnitt \ref{motivationpel} bereits erwähnt, sind maximale Kontrastunterschiede (und nicht minimale) wichtig zur Darstellung der inneren und äußeren Beschaffenheit eines Objekts. Es sind deshalb nur die gefundenen Nullstellen wichtig, die ein Maxima beschreiben (in Figure \ref{fig:abcd} erkennbar). Mathematisch wird dies durch die Einschränkung
+Wie in der Einleitung zu Abschnitt \ref{pellabel} bereits erwähnt, sind maximale Kontrastunterschiede (und nicht minimale) wichtig zur Darstellung der inneren und äußeren Beschaffenheit eines Objekts. Es sind deshalb nur die gefundenen Nullstellen wichtig, die ein Maxima beschreiben (in Figure \ref{fig:abcd} erkennbar). Mathematisch wird dies durch die Einschränkung
 \begin{equation}
 D_{w}D_{w}||\nabla f || < 0	
 \label{eq:dwdw}
@@ -126,7 +142,7 @@ beschrieben. Es lässt sich abschließend definieren:
 \textit{Die PEL ist die Menge aller Punkte der Oberfläche S, die den Bedingungen (\ref{eq:dw}) und (\ref{eq:dwdw}) genügen.}
 \\\\
 Es wird deutlich, dass das Ergebnis sehr stark von der Beleuchtung des Objekts abhängt. Xie et al. schlagen deshalb sowohl eine Beleuchtungsfunktion selbst (Abschnitt \ref{belfkt}), als auch eine Positionierung der Lichter (Abschnitt \ref{beleuchtung}) vor.\\\\
-Zu beachten ist weiterhin, dass die partiellen Ableitungen (Schritt 1,2 und 3) nicht auf kontinuierlichen Oberflächen berechnet werden, sondern die einzelnen Punkte, bzw. Dreiecke des 3D-Objekts herangezogen werden müssen. Die genaue Vorgehensweise wird in Abschnitt \ref{pel-impl} beschrieben. Auch die Nullstellen können nicht implizit berechnet werden, sondern müssen mittels linearer Interpolation zwischen den Ergebnissen der einzelnen Punkte gefunden werden. Erläutert wird dies in Abschnitt \ref{zeichnen}. 
+Zu beachten ist weiterhin, dass die partiellen Ableitungen (Schritt 1,2 und 3) nicht auf kontinuierlichen Oberflächen berechnet werden, sondern die einzelnen Punkte, bzw. Dreiecke des 3D-Objekts herangezogen werden müssen. Die genaue Vorgehensweise wird in Abschnitt \ref{pel-impl} beschrieben. Auch die Nullstellen können nicht implizit berechnet werden, sondern müssen mittels linearer Interpolation zwischen den Ergebnissen der einzelnen Punkte gefunden werden. Erläutert wird dies in Abschnitt \ref{zeichnen}, in dem zusätzlich näher auf die Vorverarbeitung der Geometrie eingegangen wird.
 \begin{figure}
 	\centering
 		\includegraphics[width=0.7\linewidth]{abcd.png}
@@ -190,8 +206,10 @@ Hervorzuheben ist, dass die Bereiche der Hilfslichter nicht von der Sicht abhän
 	\label{fig:rabbit}
 \end{figure}
 \label{beleuchtung}
-\subsubsection{Berechnung der Ableitungen}
+\subsubsection{Implementationshinweise}
 \label{pel-impl}
+Da die Beleuchtungsfunktion $f$ stetig ist, kann mögliches unerwünschtes Rauschen nur durch eine zu detaillierte Geometrie entstehen. Xie et al. empfehlen deshalb, die Oberflächennormalen einmal zu Beginn des Algorithmus mit einem Bilateralfilter zu glätten. Das Vorgehen orientiert sich an Fleishman, Drori und Cohen-Or. Details lassen sich dem zugehörigen Paper \todo{TO-DO: QUELLE} entnehmen. 
+
 Das Berechnen der (partiellen) Ableitungen bildet einen Großteil der zum Finden der PELs benötigten Schritte (vergleiche Abschnitt \ref{defpel}). Da die Oberfläche allerdings üblicherweise nicht als Funktion $S : D \subset R^{2} \longrightarrow R^{3}$, sondern als Menge einzelner Punkte gegeben ist, können Ableitungen nicht implizit berechnet werden. Xie et al. bedienen sich deshalb eines Tricks:
 Die Berechnung der Ableitung eines Punktes erfolgt durch Mitteln der Ableitungen der anliegenden Dreiecke. Diese wiederum berechnen sich durch:
 \begin{equation}
@@ -205,7 +223,8 @@ $g_{1}$, $g_{2}$ und $g_{3}$ sind die Helligkeitswerte der drei Punkte des Dreie
 \label{guivui}
 \end{equation}
 \\
-Sind alle Ableitungen der anliegenden Dreiecke des Punktes berechnet und in das korrekte Koordinatensystem überführt, werden diese mittels Voronoi-Flächengewicht $w_{i}$ gemittelt und aufaddiert. Das bedeutet, dass nur der Anteil des jeweiligen Dreiecks verwendet wird, der auch am nähesten an diesem Punkt liegt. Die Ableitung eines Punktes berechnet sich demnach abschließend mittels der Formel:
+Sind alle Ableitungen der anliegenden Dreiecke des Punktes berechnet und in das korrekte Koordinatensystem überführt, werden diese mittels Voronoi-Flächengewicht $w_{i}$ gemittelt und aufaddiert. Das bedeutet, dass nur der Anteil des jeweiligen Dreiecks verwendet wird, der auch am nähesten an diesem Punkt liegt. Das genaue Vorgehen der Gewichtung $w_{i}$ ist der Quelle \todo{TO-DO: QUELLE} zu entnehmen.
+Die Ableitung eines Punktes berechnet sich demnach abschließend mittels der Formel:
  \begin{equation}
 \nabla g(u,v) = \sum_{i} w_{i} \nabla g(u_{i},v_{i})
 \label{guvl}
@@ -222,7 +241,7 @@ Um die Photic Extremum Lines abschließend zu zeichnen, müssen zunächst die Nu
 \\
 Werden zwei Nullstellen auf Kanten eines Dreiecks gefunden, kann zwischen diesen beiden Punkten eine Linie gezeichnet werden.
 \\\\
-Um einen Schwellwert einzubinden, der diejenigen PELs entfernt, die generell unnötige kleine Details beschreiben, wird eine Größe berücksichtigt, die sich als Stärke einer Linie betrachten lässt. Hierfür bedient sich die Gruppe einer Technik von Ohtake et al. \todo{To-Do: Quelle} und integriert $|| \nabla f ||$über die einzelnen Linien. 
+Um einen Schwellwert einzubinden, der diejenigen PELs entfernt, die generell unnötige kleine Details beschreiben, wird eine Größe berücksichtigt, die sich auch als die Stärke einer Linie betrachten lässt. Hierfür bedient sich die Gruppe einer Technik von Ohtake et al. \todo{To-Do: Quelle} und integriert $|| \nabla f ||$über die einzelnen Linien. 
 \begin{equation}
 \resizebox{.88\hsize}{!}{$\int{} || \nabla f ||ds \approx \sum \frac{ \nabla f(\mathbf{p}_{i})|| + || \nabla f(\mathbf{p}_{i+1})||}{2}||\mathbf{p}_{i} - \mathbf{p}_{i+1}||$}
 \end{equation}

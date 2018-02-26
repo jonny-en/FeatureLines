@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.5)  14 FEB 2018 20:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.5)  26 FEB 2018 20:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -24,7 +24,7 @@ Document Class: paperStyle
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
-) (/Users/jonas/Uni/4_Semester/Seminar/Vorlage/.texpadtmp/SeminarFramework.lbl)
+) (/Users/Jonas/Uni/4_Semester/Seminar/Vorlage/FeatureLines/.texpadtmp/SeminarFramework.lbl)
 \openout9 = `SeminarFramework.lbl'.
 
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -460,7 +460,16 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 Package: ngerman 1998/07/08 v2.5e Support for writing german texts (br)
 \grmnU@D=\dimen106
 ngerman -- \language number for naustrian undefined, default 31 used.
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks19
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
  (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
@@ -475,27 +484,27 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-) (/Users/jonas/Uni/4_Semester/Seminar/Vorlage/.texpadtmp/SeminarFramework.aux)
+) (/Users/Jonas/Uni/4_Semester/Seminar/Vorlage/FeatureLines/.texpadtmp/SeminarFramework.aux)
 \openout1 = `SeminarFramework.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 43.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    ... okay on input line 43.
  (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count93
@@ -503,12 +512,12 @@ LaTeX Font Info:    ... okay on input line 41.
 \scratchbox=\box26
 \nofMPsegments=\count94
 \nofMParguments=\count95
-\everyMPshowfont=\toks19
+\everyMPshowfont=\toks20
 \MPscratchCnt=\count96
 \MPscratchDim=\dimen108
 \MPnumerator=\count97
 \makeMPintoPDFobject=\count98
-\everyMPtoPDFconversion=\toks20
+\everyMPtoPDFconversion=\toks21
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -542,81 +551,242 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 43.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 43.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 43.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 47--52
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--50
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--76
+
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 71--76
+\OT1/cmr/m/n/9 F[]ur die in Ab-schnitt 3.2.1[] be-schrie-be-ne Be-rech-
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 71--76
+\OT1/cmr/m/n/9 sich durch die par-ti-el-len Ab-lei-tun-gen nach den
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
+
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 91--92
+\OT1/cmr/m/n/9 Der Nor-mal-schnitt an ei-nem Punkt $\OML/cmm/m/it/9 p$ \OT1/cmr/m/n/9 auf ei-ner
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 91--92
+\OT1/cmr/m/n/9 Die Kr[]ummung der ebe-nen Kur-ve, die der Nor-
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 91--92
+\OT1/cmr/m/n/9 mal-schnitt lie-fert, nennt man Nor-mal-kr[]ummung.
  []
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] <figures/abcd.png, id=17, 680.5425pt x 552.0625pt>
+]
+Underfull \hbox (badness 4024) in paragraph at lines 122--124
+\OT1/cmr/m/n/9 dass die Be-leuch-tungs-funk-ti-on $\OML/cmm/m/it/9 f$ \OT1/cmr/m/n/9 drei-mal ste-tig
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
+\OT1/cmr/m/n/9 Der Gra-di-ent ei-nes Punk-tes ei-ner Ober-fl[]ache
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 134--136
+\OT1/cmr/m/n/9 Wie in der Ein-lei-tung zu Ab-schnitt 3.2[] be-reits
+ []
+
+<figures/abcd.png, id=18, 680.5425pt x 552.0625pt>
 File: figures/abcd.png Graphic file (type png)
  <use figures/abcd.png>
-Package pdftex.def Info: figures/abcd.png used on input line 112.
+Package pdftex.def Info: figures/abcd.png used on input line 148.
 (pdftex.def)             Requested size: 151.19934pt x 122.6503pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--152
+
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 142--152
+\OT1/cmr/m/n/9 Es wird deut-lich, dass das Er-geb-nis sehr stark
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--152
+
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 142--152
+\OT1/cmr/m/n/9 k[]onnen nicht im-pli-zit be-rech-net wer-den, son-dern
+ []
+
 
 Overfull \hbox (8.18365pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/8 2  \OT1/cmr/m/it/8 Bastian Bernst, Jonas Englich / Methoden zum Finden von Feature Lines - Demarcating Curves und Photic Extremum Lines 
  []
 
-[2 <./figures/abcd.png>] <figures/rabbit.png, id=24, 777.90625pt x 559.08875pt>
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 158--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
+
+ []
+
+
+Underfull \hbox (badness 3250) in paragraph at lines 171--173
+\OT1/cmr/m/n/9 Das Haupt-licht ist ein ge-rich-te-tes Licht und
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 171--173
+\OT1/cmr/m/n/9 Es ist zu be-ach-ten, dass die-ses Licht mit der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
+
+ []
+
+<figures/rabbit.png, id=23, 777.90625pt x 559.08875pt>
 File: figures/rabbit.png Graphic file (type png)
  <use figures/rabbit.png>
-Package pdftex.def Info: figures/rabbit.png used on input line 168.
+Package pdftex.def Info: figures/rabbit.png used on input line 204.
 (pdftex.def)             Requested size: 151.19934pt x 108.66782pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--209
+
+ []
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 194--209
+\OT1/cmr/m/n/9 Da die Be-leuch-tungs-funk-ti-on $\OML/cmm/m/it/9 f$ \OT1/cmr/m/n/9 ste-tig ist, (sie-he
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 194--209
+\OT1/cmr/m/n/9 der ver-schie-de-nen Be-rei-chen kei-ne Un-s-te-tig-kei-ten
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 194--209
+\OT1/cmr/m/n/9 (Ab-bil-dung 2[]). Schnitt-punk-te ent-ste-hen dort, wo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--209
+
+ []
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 194--209
+\OT1/cmr/m/n/9 Hervorzuheben ist, dass die Be-rei-che der Hilfs-
+ []
+
 
 Overfull \hbox (6.29474pt too wide) has occurred while \output is active
  \OT1/cmr/m/it/8 Bastian Bernst, Jonas Englich / Methoden zum Finden von Feature Lines - Demarcating Curves und Photic Extremum Lines \OT1/cmr/m/n/8 3
  []
 
-[3 <./figures/rabbit.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
-[]\OT1/cmr/m/n/9 TO-DO: Bernst und Eng-lich - Er-geb-nis-
+[3 <./figures/abcd.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 240--245
+
  []
 
 
-Overfull \hbox (17.6163pt too wide) in paragraph at lines 216--228
-[][] 
+Underfull \hbox (badness 3108) in paragraph at lines 240--245
+\OT1/cmr/m/n/9 Um einen Schwell-wert ein-zu-bin-den, der die-je-ni-
  []
 
 
-Overfull \hbox (9.49657pt too wide) in paragraph at lines 232--232
-[]\OT1/cmr/bx/n/9 Zusammenfassung/Schlussfolgerung/Ausblick  
+Underfull \hbox (badness 2310) in paragraph at lines 240--245
+\OT1/cmr/m/n/9 gen PELs ent-fernt, die ge-ne-rell unn[]oti-ge klei-ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
-[]\OT1/cmr/m/n/9 TO-DO: Bernst und Eng-lich - Zu-sam-men-fas-
+Underfull \hbox (badness 1596) in paragraph at lines 240--245
+\OT1/cmr/m/n/9 von Oht-a-ke et al. []To-Do: Quel-le[] und in-te-griert
  []
 
-(/Users/jonas/Uni/4_Semester/Seminar/Vorlage/.texpadtmp/SeminarFramework.bbl)
+
 Overfull \hbox (8.18365pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/8 4  \OT1/cmr/m/it/8 Bastian Bernst, Jonas Englich / Methoden zum Finden von Feature Lines - Demarcating Curves und Photic Extremum Lines 
  []
 
-[4
+[4 <./figures/rabbit.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+[]\OT1/cmr/m/n/9 TO-DO: Bernst und Eng-lich - Er-geb-nis-
+ []
 
-] (/Users/jonas/Uni/4_Semester/Seminar/Vorlage/.texpadtmp/SeminarFramework.aux) ) 
+
+Overfull \hbox (17.6163pt too wide) in paragraph at lines 254--266
+[][] 
+ []
+
+
+Overfull \hbox (9.49657pt too wide) in paragraph at lines 270--270
+[]\OT1/cmr/bx/n/9 Zusammenfassung/Schlussfolgerung/Ausblick  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+[]\OT1/cmr/m/n/9 TO-DO: Bernst und Eng-lich - Zu-sam-men-fas-
+ []
+
+(/Users/Jonas/Uni/4_Semester/Seminar/Vorlage/FeatureLines/.texpadtmp/SeminarFramework.bbl)
+Overfull \hbox (6.29474pt too wide) has occurred while \output is active
+ \OT1/cmr/m/it/8 Bastian Bernst, Jonas Englich / Methoden zum Finden von Feature Lines - Demarcating Curves und Photic Extremum Lines \OT1/cmr/m/n/8 5
+ []
+
+[5
+
+] (/Users/Jonas/Uni/4_Semester/Seminar/Vorlage/FeatureLines/.texpadtmp/SeminarFramework.aux) ) 
 Here is how much of TeX's memory you used:
- 3151 strings out of 493089
- 42819 string characters out of 6134843
- 115167 words of memory out of 5000000
- 6593 multiletter control sequences out of 15000+600000
- 8654 words of font info for 30 fonts, out of 8000000 for 9000
+ 3449 strings out of 493089
+ 46276 string characters out of 6134843
+ 115732 words of memory out of 5000000
+ 6870 multiletter control sequences out of 15000+600000
+ 10578 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,35p,618b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on /Users/jonas/Uni/4_Semester/Seminar/Vorlage/.texpadtmp/SeminarFramework.pdf (4 pages, 1380058 bytes).
+ 38i,9n,35p,845b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /Users/Jonas/Uni/4_Semester/Seminar/Vorlage/FeatureLines/.texpadtmp/SeminarFramework.pdf (5 pages, 1389971 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
