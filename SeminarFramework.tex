@@ -61,7 +61,11 @@ Pastor et al. \cite{Praun2001} präsentieren ein Technik unter Ausnutzung der Gr
 
 
 \subsection{Gradient}
-\todo{TO-DO: Bernst und Englich}
+Sei $f(x,y,z)$ ein Skalarfeld. Der Gradient $grad(f)$ ist ein Vektor, der in die Richtung der größten Änderung von f im Punkt $P(x,z,y)$ zeigt. Der Betrag des Gradienten beschreibt die Stärke dieser Änderung. Er ist definiert als der Spaltenvektor
+\begin{equation}
+grad(f) = \nabla f = \left(\begin{array}{c}\frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \\ \frac{\partial f}{\partial z}\end{array}\right)
+\end{equation} 
+Die Einträge des Vektors sind dabei die partiellen Ableitungen in x-,y- und z-Richtung.
 \subsection{Erste und Zweite Fundamentalform}
 \label{fundamental}
 Gegeben sei eine durch eine offene Abbildung definierte Oberfläche $S : D \subset R^{2} \longrightarrow R^{3}$ mit den Parametern $u$ und $v$. Dann heißt die Abbildung I, die jedem Punkt $p \in S$ die Einschränkung des euklidischen Skalarproduktes auf die Tangentialebene $T_{p}S$ zuordnet \textit{Erste Fundamentalform} von S
@@ -208,10 +212,10 @@ Hervorzuheben ist, dass die Bereiche der Hilfslichter nicht von der Sicht abhän
 \label{beleuchtung}
 \subsubsection{Implementationshinweise}
 \label{pel-impl}
-Da die Beleuchtungsfunktion $f$ stetig ist, kann mögliches unerwünschtes Rauschen nur durch eine zu detaillierte Geometrie entstehen. Xie et al. empfehlen deshalb, die Oberflächennormalen einmal zu Beginn des Algorithmus mit einem Bilateralfilter zu glätten. Das Vorgehen orientiert sich an Fleishman, Drori und Cohen-Or. Details lassen sich dem zugehörigen Paper \todo{TO-DO: QUELLE} entnehmen. 
+Da die Beleuchtungsfunktion $f$ stetig ist, kann mögliches unerwünschtes Rauschen im Ergebnis nur durch eine zu detaillierte Geometrie entstehen. Xie et al. empfehlen deshalb, die Oberflächennormalen einmal zu Beginn des Algorithmus mit einem Bilateralfilter zu glätten. Das Vorgehen orientiert sich an Fleishman, Drori und Cohen-Or. Details lassen sich dem zugehörigen Paper \todo{TO-DO: QUELLE} entnehmen. 
 
 Das Berechnen der (partiellen) Ableitungen bildet einen Großteil der zum Finden der PELs benötigten Schritte (vergleiche Abschnitt \ref{defpel}). Da die Oberfläche allerdings üblicherweise nicht als Funktion $S : D \subset R^{2} \longrightarrow R^{3}$, sondern als Menge einzelner Punkte gegeben ist, können Ableitungen nicht implizit berechnet werden. Xie et al. bedienen sich deshalb eines Tricks:
-Die Berechnung der Ableitung eines Punktes erfolgt durch Mitteln der Ableitungen der anliegenden Dreiecke. Diese wiederum berechnen sich durch:
+Die Berechnung der Ableitung eines Punktes erfolgt durch Mitteln der Ableitungen der anliegenden Dreiecke. Diese berechnen sich durch:
 \begin{equation}
 \resizebox{.85\hsize}{!}{$\nabla g = \left(\begin{array}{c}\frac{\partial g}{\partial x} \\ \frac{\partial g}{\partial y}\end{array}\right) = \frac{1}{d_{T}} \left(\begin{array}{rrr}y_{2}-y_{3} & y_{3}-y_{1} & y_{1}-y_{2} \\ x_{3}-x_{2} & x_{1}-y_{3} & x_{2}-x_{1}\end{array}\right) \left(\begin{array}{c}g_{1} \\ g_{2} \\ g_{3}\end{array}\right)$}
 \label{eq:derivativepel}
