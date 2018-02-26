@@ -74,7 +74,28 @@ grad(f) = \nabla f = \left(\begin{array}{c}\frac{\partial f}{\partial x} \\ \fra
 Die Einträge des Vektors sind dabei die partiellen Ableitungen in x-,y- und z-Richtung.
 \subsection{Erste und Zweite Fundamentalform}
 \label{fundamental}
-\todo{TO-DO: Bernst und Englich}
+Gegeben sei eine durch eine offene Abbildung definierte Oberfläche $S : D \subset R^{2} \longrightarrow R^{3}$ mit den Parametern $u$ und $v$. Dann heißt die Abbildung I, die jedem Punkt $p \in S$ die Einschränkung des euklidischen Skalarproduktes auf die Tangentialebene $T_{p}S$ zuordnet \textit{Erste Fundamentalform} von S
+\begin{equation}
+\resizebox{.9\hsize}{!}{$
+I: \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}, (w_{1},w_{2}) \mapsto E(u,v)^{2} + 2F(u,v) + G(u,v)^{2}$}
+\end{equation}	
+Diese Form erlaubt es, Messungen innerhalb der Oberfläche vorzunehmen. Dazu gehören das Bestimmen der Länge von Kurven, der Winkel von Tangentenvektoren und des Flächeninhalts bestimmter Teilbereiche.
+\\
+\\
+Für die in Abschnitt \ref{defpel} beschriebene Berechnung des Gradienten $\nabla f$ werden nunmehr explizit die Koeffizienten E, F und G benötigt. Diese Berechnen sich durch die partiellen Ableitungen nach den Parametern $u$ und $v$.
+
+\begin{equation}
+E(u,v) = |\frac{\partial S}{\partial u}(u,v)|^{2},
+\end{equation}	
+\begin{equation}
+F(u,v) = \frac{\partial S}{\partial u}(u,v) \cdot \frac{\partial S}{\partial v}(u,v),
+\end{equation}	
+\begin{equation}
+G(u,v) = |\frac{\partial S}{\partial v}(u,v)|^{2}
+\end{equation}	
+\\
+\\	
+\todo{TO-DO: Bernst Zweite}
 \subsection{Normalschnitt und Normalkrümmung}
 \label{normalschnitt}
 Der Normalschnitt an einem Punkt $p$ auf einer regulären Fläche im $\mathbb{R}^3$ ist die Kurve, die sich aus dem Schnitt der Oberfläche und der Ebene ergibt, die von einem Tangentialvektor $\vec{v}$ und der Normale $\vec{n}$ an diesem Punkt aufgespannt wird.\\\\Die Krümmung der ebenen Kurve, die der Normalschnitt liefert, wird auch als Normalkrümmung $\kappa$ bezeichnet:

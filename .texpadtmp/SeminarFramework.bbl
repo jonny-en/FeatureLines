@@ -11,4 +11,10 @@
 \newblock In \emph{SIGGRAPH '01: Computer Graphics Proceedings} (2001), Fiume
   E., (Ed.), pp.~579--584.
 
+\bibitem[Rus04]{CurvDeriv2004}
+\textsc{Rusinkiewicz S.}:
+\newblock Estimating curvatures and their derivatives on triangle meshes.
+\newblock In \emph{Symposium on 3D Data Processing, Visualization, and
+  Transmission} (Sept. 2004).
+
 \end{thebibliography}
