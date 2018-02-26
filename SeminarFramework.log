@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.1.18)  26 FEB 2018 20:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.1.18)  26 FEB 2018 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -778,7 +778,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 76--77
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 94--97
+Underfull \hbox (badness 1052) in paragraph at lines 91--94
 \OT1/cmr/m/n/9 Nach Ru-sin-kie-wicz [] ist die Ab-lei-tung der
  []
 
@@ -786,53 +786,58 @@ Underfull \hbox (badness 1052) in paragraph at lines 94--97
 
 
 ]
-Underfull \hbox (badness 2103) in paragraph at lines 112--117
+Underfull \hbox (badness 2103) in paragraph at lines 109--114
 \OT1/cmr/m/n/9 Ko-lo-men-kin et al. [] de-fi-nie-ren da-zu den
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--117
+Underfull \hbox (badness 10000) in paragraph at lines 109--114
 
  []
 
 
-Underfull \hbox (badness 2781) in paragraph at lines 147--149
+Underfull \hbox (badness 4024) in paragraph at lines 145--147
 \OT1/cmr/m/n/9 dass die Be-leuch-tungs-funk-ti-on $\OML/cmm/m/it/9 f$ \OT1/cmr/
 m/n/9 drei-mal ste-tig
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
 \OT1/cmr/m/n/9 Der Gra-di-ent ei-nes Punk-tes ei-ner Ober-fl[]ache
  []
 
-<figures/abcd.png, id=17, 680.5425pt x 552.0625pt>
+
+Underfull \hbox (badness 1769) in paragraph at lines 157--159
+\OT1/cmr/m/n/9 Wie in der Ein-lei-tung zu Ab-schnitt 3.2[] be-reits
+ []
+
+<figures/abcd.png, id=18, 680.5425pt x 552.0625pt>
 File: figures/abcd.png Graphic file (type png)
 <use figures/abcd.png>
-Package pdftex.def Info: figures/abcd.png  used on input line 177.
+Package pdftex.def Info: figures/abcd.png  used on input line 171.
 (pdftex.def)             Requested size: 151.19934pt x 122.6503pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--181
+Underfull \hbox (badness 10000) in paragraph at lines 165--175
 
  []
 
 
-Underfull \hbox (badness 1990) in paragraph at lines 171--181
+Underfull \hbox (badness 1990) in paragraph at lines 165--175
 \OT1/cmr/m/n/9 Es wird deut-lich, dass das Er-geb-nis sehr stark
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--181
+Underfull \hbox (badness 10000) in paragraph at lines 165--175
 
  []
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 171--181
+Underfull \hbox (badness 1502) in paragraph at lines 165--175
 \OT1/cmr/m/n/9 k[]onnen nicht im-pli-zit be-rech-net wer-den, son-dern
  []
 
@@ -843,68 +848,68 @@ Finden von Feature Lines - Demarcating Curves und Photic Extremum Lines
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--195
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
 
  []
 
 
-Underfull \hbox (badness 3250) in paragraph at lines 200--202
+Underfull \hbox (badness 3250) in paragraph at lines 194--196
 \OT1/cmr/m/n/9 Das Haupt-licht ist ein ge-rich-te-tes Licht und
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 200--202
+Underfull \hbox (badness 1052) in paragraph at lines 194--196
 \OT1/cmr/m/n/9 Es ist zu be-ach-ten, dass die-ses Licht mit der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--202
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 206--207
+Underfull \hbox (badness 1642) in paragraph at lines 200--201
 []\OT1/cmr/m/n/9 Zur er-go-no-mi-schen Po-si-tio-nie-rung der Hilfs-lich-ter
  []
 
 <figures/rabbit.png, id=24, 777.90625pt x 559.08875pt>
 File: figures/rabbit.png Graphic file (type png)
 <use figures/rabbit.png>
-Package pdftex.def Info: figures/rabbit.png  used on input line 233.
+Package pdftex.def Info: figures/rabbit.png  used on input line 227.
 (pdftex.def)             Requested size: 151.19934pt x 108.66782pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--238
+Underfull \hbox (badness 10000) in paragraph at lines 217--232
 
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 223--238
+Underfull \hbox (badness 1635) in paragraph at lines 217--232
 \OT1/cmr/m/n/9 Da die Be-leuch-tungs-funk-ti-on $\OML/cmm/m/it/9 f$ \OT1/cmr/m/
 n/9 ste-tig ist, (sie-he
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 223--238
+Underfull \hbox (badness 2205) in paragraph at lines 217--232
 \OT1/cmr/m/n/9 der ver-schie-de-nen Be-rei-chen kei-ne Un-s-te-tig-kei-ten
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 223--238
+Underfull \hbox (badness 1231) in paragraph at lines 217--232
 \OT1/cmr/m/n/9 (Ab-bil-dung 2[]). Schnitt-punk-te ent-ste-hen dort, wo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--238
+Underfull \hbox (badness 10000) in paragraph at lines 217--232
 
  []
 
 
-Underfull \hbox (badness 2469) in paragraph at lines 223--238
+Underfull \hbox (badness 2469) in paragraph at lines 217--232
 \OT1/cmr/m/n/9 Hervorzuheben ist, dass die Be-rei-che der Hilfs-
  []
 
@@ -915,28 +920,23 @@ e Lines - Demarcating Curves und Photic Extremum Lines \OT1/cmr/m/n/8 3
  []
 
 [3 <./figures/abcd.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 266--271
+Underfull \hbox (badness 10000) in paragraph at lines 263--268
 
  []
 
 
-Underfull \hbox (badness 3108) in paragraph at lines 266--271
+Underfull \hbox (badness 3108) in paragraph at lines 263--268
 \OT1/cmr/m/n/9 Um einen Schwell-wert ein-zu-bin-den, der die-je-ni-
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 266--271
+Underfull \hbox (badness 2310) in paragraph at lines 263--268
 \OT1/cmr/m/n/9 gen PELs ent-fernt, die ge-ne-rell unn[]oti-ge klei-ne
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
-[]\OT1/cmr/m/n/9 TO-DO: Bernst und Eng-lich - Er-geb-nis-
- []
-
-
-Overfull \hbox (17.6163pt too wide) in paragraph at lines 280--292
-[][] 
+Underfull \hbox (badness 1596) in paragraph at lines 263--268
+\OT1/cmr/m/n/9 von Oht-a-ke et al. []To-Do: Quel-le[] und in-te-griert
  []
 
 
@@ -946,12 +946,22 @@ Finden von Feature Lines - Demarcating Curves und Photic Extremum Lines
  []
 
 [4 <./figures/rabbit.png>]
-Overfull \hbox (9.49657pt too wide) in paragraph at lines 296--296
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+[]\OT1/cmr/m/n/9 TO-DO: Bernst und Eng-lich - Er-geb-nis-
+ []
+
+
+Overfull \hbox (17.6163pt too wide) in paragraph at lines 277--289
+[][] 
+ []
+
+
+Overfull \hbox (9.49657pt too wide) in paragraph at lines 293--293
 []\OT1/cmr/bx/n/9 Zusammenfassung/Schlussfolgerung/Ausblick  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
 []\OT1/cmr/m/n/9 TO-DO: Bernst und Eng-lich - Zu-sam-men-fas-
  []
 
@@ -965,13 +975,13 @@ e Lines - Demarcating Curves und Photic Extremum Lines \OT1/cmr/m/n/8 5
 
 ] (./SeminarFramework.aux) ) 
 Here is how much of TeX's memory you used:
- 4107 strings out of 492980
- 52629 string characters out of 6131557
- 125404 words of memory out of 5000000
- 7594 multiletter control sequences out of 15000+600000
+ 4105 strings out of 492980
+ 52603 string characters out of 6131557
+ 125384 words of memory out of 5000000
+ 7592 multiletter control sequences out of 15000+600000
  10578 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,35p,847b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,35p,847b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
 <f:/Programme/texlive/2017/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb><f:/Programme/texlive/2017/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmbx6.pfb><f:/Programme/texlive/2017/texmf-dist/fonts/type1/
@@ -991,7 +1001,7 @@ type1/public/amsfonts/cm/cmsy9.pfb><f:/Programme/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti8.pfb><f:/Programme/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti9.pfb><f:/Programme/texlive/2017/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on SeminarFramework.pdf (5 pages, 1390739 bytes).
+Output written on SeminarFramework.pdf (5 pages, 1390678 bytes).
 PDF statistics:
  97 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
