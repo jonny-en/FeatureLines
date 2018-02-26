@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: /Users/jonas/Uni/4_Semester/Seminar/Vorlage/.texpadtmp/SeminarFramework.aux
+The style file: ../literaturStyle.bst
+Database file #1: ../literatur.bib
+You've used 1 entry,
+            2855 wiz_defined-function locations,
+            629 strings with 4972 characters,
+and the built_in function-call counts, 660 in all, are:
+= -- 63
+> -- 34
+< -- 0
++ -- 13
+- -- 13
+* -- 49
+:= -- 108
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 8
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 27
+empty$ -- 46
+format.name$ -- 14
+if$ -- 137
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 5
+pop$ -- 10
+preamble$ -- 1
+purify$ -- 9
+quote$ -- 0
+skip$ -- 26
+stack$ -- 0
+substring$ -- 39
+swap$ -- 10
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 9
+warning$ -- 0
+while$ -- 7
+width$ -- 2
+write$ -- 15
