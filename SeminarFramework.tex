@@ -102,7 +102,7 @@ Der Normalschnitt an einem Punkt $p$ auf einer regulären Fläche im $\mathbb{R}
 \begin{equation}
 	\kappa(v)= v^T\Rmnum{2}v
 \end{equation}
-Zu beachten ist hierbei, dass die Normalkrümmung an einem Punkt einer Tangentialrichtung, also der Richtung $v$ des Normalschnitts, zugeordnet wird. Die symmetrische Matrix $\Rmnum{2}$ ist die zweite Fundamentalform (\ref{fundamental}).
+Zu beachten ist hierbei, dass die Normalkrümmung an einem Punkt einer Tangentialrichtung, also der Richtung $v$ des Normalschnitts, zugeordnet wird. Die symmetrische Matrix $\Rmnum{2}$ ist die zweite Fundamentalform (\ref{fundamental}). Im Folgenden wird der Einfachheit wegen den Begriff der Krümmung verwendet. 
 
 
 \section{Konzepte / Algorithmen}
@@ -111,10 +111,10 @@ Zu beachten ist hierbei, dass die Normalkrümmung an einem Punkt einer Tangentia
 \subsection{Demarcating Curves}\label{demcurvlabel}
 Häufig reicht die reine Betrachtung eines Objektes nicht aus, um einen ausreichenden Eindruck über dessen Form und Beschaffenheit zu gewinnen. Während der Mensch mit dem Tastsinn ein weiteres Werkzeug zur Untersuchung der Oberfläche besitzt, werden in der Computergrafik Feature Lines auf dem Objekt gezeichnet. Da unterschiedliche Algorithmen auf einem Objekt zu ganz unterschiedliche Strukturen hervorheben können, existiert inzwischen eine große Menge an Methoden, die für unterschiedliche Anwendungsgebiete mal mehr, mal weniger gut geeignet sind. Kolomenkin et al. \cite{Demarcating} stellen mit den Demarcating Curves eine neue Art von Kurven vor, die vor allem auf dem Gebiet der Archäologie dabei helfen soll, Strukturen auf gefundenen Relikten sichtbar zu machen und diese zu digitalisieren.
 
-\subsubsection{Konzept und Ablauf}
+\subsubsection{Konzept}
 \label{defdem}
-Betrachtet man eine 3D-Oberfläche als Terrain mit Bergketten und Tälern, so verlaufen die Demarcating Curves entlang der Hänge, die Täler und Berge trennen. Sie beschreiben dabei die Orte der stärksten Beugung auf der Oberfläche, also die Orte, an denen die Ableitung der Krümmung maximal ist.
-\\
+Betrachtet man eine 3D-Oberfläche als Terrain mit Bergketten und Tälern, so verlaufen die Demarcating Curves entlang der Hänge, die Täler und Berge trennen. Sie beschreiben dabei die Orte der stärksten Beugung auf der Oberfläche, also die Orte, an denen die Ableitung der Krümmung maximal ist. Diese Punkte auf der Oberfläche zu finden, ist die Aufgabe des Algorithmus.  
+\\\\
 Nach Rusinkiewicz \cite{CurvDeriv2004} ist die Ableitung der Krümmung durch einen $2 \times 2 \times 2$ Tensor definiert:
 
 \begin{equation}
@@ -132,26 +132,35 @@ Nach Rusinkiewicz \cite{CurvDeriv2004} ist die Ableitung der Krümmung durch ein
 	\Big)
 	\Big]
 \end{equation}
-$u_1$ und $u_2$ beschreiben hierbei die Hauptrichtungen. Die Ableitung der Krümmung in eine Richtung $\vec{v}$ ergibt sich aus der Multiplikation von $\vec{v}$ mit $C$:
+$u_1$ und $u_2$ beschreiben hierbei die Hauptrichtungen. Die Ableitung der Krümmung in eine Richtung $\vec{v}$ ergibt sich aus der Multiplikation mit $C$:
 $
 C_{ijk} v^i v^j v^k
-$. Es werden nun jene Orte gesucht, an denen die Ableitung der Krümmung maximal ist. Kolomenkin et al. \cite{Demarcating} definieren dazu den Krümmungsgradienten: \\
-\begin{description}
-\item[Krümmungsgradient]\hfill\\
-Der Krümmungsgradient ist die Tangentenrichtung der maximalen Abweichung der Normalkrümmung. Diese Richtung maximiert den Ausdruck:
+$.\\
+\\
+ Es werden nun jene Orte gesucht, an denen die Ableitung der Krümmung maximal ist. Kolomenkin et al. \cite{Demarcating} definieren dazu den Krümmungsgradienten: \\
+
+\textbf{Krümmungsgradient}
+\emph{Der Krümmungsgradient ist die Tangentenrichtung der maximalen Abweichung der Normalkrümmung. Diese Richtung maximiert den Ausdruck: }
 \begin{equation}
 g_p= \arg\max_v C_{ijk}v^{i}v^{j}v^{k}, s.t. \Vert v\Vert = 1.
-\end{equation}\end{description}
-Daraus ergibt sich schlussendlich die Definition eines Kurvenpunktes.
-\begin{description}
-	\item[Definition.]\hfill \\
+\end{equation}
+Um $g_p$ zu bestimmen, kann numerisch (Sampling) oder analytisch vorgegangen werden. Kolomenkin et al. entschieden sich für eine analytische Lösung. Diese wird genauer in \ref{implDem} beschrieben. 
+ 
+Um die Kurvenpunkte zu finden, wird zunächst für jeden Punkt die Krümmung $\kappa(g_p) = g_p^T\Rmnum{2}g_p^T$ bestimmt. Anschließend werden die Nullstellen von $\kappa(g_p)$ auf der Oberfläche ermittelt.
+
+\textbf{Definition.} 
 	\emph{\textbf{p} ist ein Punkt auf einer Demarcating Curve, wenn gilt:} \begin{equation}
-	\kappa(g_p) = g_p^T\Rmnum{2}g_p=0\end{equation}
-\end{description}
-\subsubsection{Bestimmung der Krümmungsgradienten}
-\todo{TO-DO: Bernst}
-\subsubsection{Berechnung der Kurven}
-\todo{TO-DO: Bernst}
+	\textbf{p:} \kappa(g_p) = g_p^T\Rmnum{2}g_p=0\end{equation}
+ Das Vorgehen von Kolomenkin et al. bei der Ermittlung jener Punkte wird in \ref{implDem} vorgestellt.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{demarcatingCurve.png}
+	\caption{Eine weiche Stufenkante auf einer Oberfläche. Die Demarcating Curve verläuft orthogonal zu dem Normalschnitt (magenta) in der lokalen Richtung $g_p$ (cyan). \cite{Demarcating}}
+	\label{fig:abcd}
+\end{figure}
+\subsubsection{Umsetzung}
+\label{implDem}
+
 \subsection{Photic Extremum Lines}
 Die Beleuchtung spielt bei der menschlichen Wahrnehmung eine extrem große Rolle. Große Kontrastunterschiede sind dabei entscheidend zum Erkennen eines Objekts. Sie lassen unser Gehirn auf die Silhouette und die innere Struktur des betrachteten Objekts schließen. Die meisten Methoden, die Feature Lines auf 3D-Objekten suchen, betrachten dabei nur die Geometrie; das Verhalten unter einfallendem Licht wird ignoriert. Deshalb werden von der Gruppe um Xie et al. die Photic Extremum Lines (kurz: PELs) eingeführt, die sich die Beleuchtung zum Finden von Feature Lines zu Nutze macht \todo{TO-DO: Quelle} .
 \label{pellabel}
