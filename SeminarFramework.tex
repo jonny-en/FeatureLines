@@ -113,11 +113,11 @@ Häufig reicht die reine Betrachtung eines Objektes nicht aus, um einen ausreich
 
 \subsubsection{Konzept}
 \label{defdem}
-Betrachtet man eine 3D-Oberfläche als Terrain mit Bergketten und Tälern, so verlaufen die Demarcating Curves entlang der Hänge, die Täler und Berge trennen. Sie beschreiben dabei die Orte der stärksten Beugung auf der Oberfläche, also die Orte, an denen die Ableitung der Krümmung maximal ist. Diese Punkte auf der Oberfläche zu finden, ist die Aufgabe des Algorithmus.  
+Betrachtet man ein Polygon-Netz einer 3D-Oberfläche (im Folgenden: Mesh) als Terrain mit Bergketten und Tälern, so verlaufen die Demarcating Curves entlang der Hänge, die Täler und Berge trennen. Sie beschreiben dabei die Orte der stärksten Beugung auf der Oberfläche, also die Orte, an denen die Ableitung der Krümmung maximal ist. Diese Punkte auf dem Mesh zu finden, ist die Aufgabe des Algorithmus.  
 \\\\
 Nach Rusinkiewicz \cite{CurvDeriv2004} ist die Ableitung der Krümmung durch einen $2 \times 2 \times 2$ Tensor definiert:
-
 \begin{equation}
+\label{eq:rusin}
 	C = (\delta_{u1}\Rmnum{2};\delta_{u2}\Rmnum{2}) = \Big[ \Big(
 	\begin{tabular}{cc}
 	 a & b \\
@@ -137,30 +137,77 @@ $
 C_{ijk} v^i v^j v^k
 $.\\
 \\
- Es werden nun jene Orte gesucht, an denen die Ableitung der Krümmung maximal ist. Kolomenkin et al. \cite{Demarcating} definieren dazu den Krümmungsgradienten: \\
-
+ Es werden nun jene Orte gesucht, an denen die Ableitung der Krümmung maximal ist. Kolomenkin et al. \cite{Demarcating} definieren dazu den Krümmungsgradienten: 
+ 
 \textbf{Krümmungsgradient}
 \emph{Der Krümmungsgradient ist die Tangentenrichtung der maximalen Abweichung der Normalkrümmung. Diese Richtung maximiert den Ausdruck: }
 \begin{equation}
+\label{eq:gp}
 g_p= \arg\max_v C_{ijk}v^{i}v^{j}v^{k}, s.t. \Vert v\Vert = 1.
 \end{equation}
 Um $g_p$ zu bestimmen, kann numerisch (Sampling) oder analytisch vorgegangen werden. Kolomenkin et al. entschieden sich für eine analytische Lösung. Diese wird genauer in \ref{implDem} beschrieben. 
- 
-Um die Kurvenpunkte zu finden, wird zunächst für jeden Punkt die Krümmung $\kappa(g_p) = g_p^T\Rmnum{2}g_p^T$ bestimmt. Anschließend werden die Nullstellen von $\kappa(g_p)$ auf der Oberfläche ermittelt.
+
+Aus der Definition des Krümmungsgradienten ergibt sich nun die Definition der eigentlichen Kurvenpunkte. Sie markieren die Nullstellen der Krümmung auf dem Mesh in Richtung der Krümmungsgradienten:
 
 \textbf{Definition.} 
-	\emph{\textbf{p} ist ein Punkt auf einer Demarcating Curve, wenn gilt:} \begin{equation}
+	\emph{\textbf{p} ist ein Punkt auf einer Demarcating Curve, wenn gilt:} \begin{equation}\label{eq:demCurve}
 	\textbf{p:} \kappa(g_p) = g_p^T\Rmnum{2}g_p=0\end{equation}
- Das Vorgehen von Kolomenkin et al. bei der Ermittlung jener Punkte wird in \ref{implDem} vorgestellt.
+ Das Vorgehen von Kolomenkin et al. bei der Ermittlung jener Punkte wird in \ref{implDem} vorgestellt. 
+ 
+ Da alle Berechnungen direkt auf der Geometrie des Mesh stattfinden, gehören die Demarcating Curves zur Gruppe der sicht-unabhängigen Kurven. Der Verlauf der Kurven wird nicht durch den Winkel des Betrachters beeinflusst.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\linewidth]{demarcatingCurve.png}
-	\caption{Eine weiche Stufenkante auf einer Oberfläche. Die Demarcating Curve verläuft orthogonal zu dem Normalschnitt (magenta) in der lokalen Richtung $g_p$ (cyan). \cite{Demarcating}}
+	\caption{Eine weiche Stufenkante auf einem Mesh. Die Demarcating Curve (grün) verläuft orthogonal zu dem Normalschnitt (magenta) in der lokalen Richtung $g_p$ (cyan). \cite{Demarcating}}
 	\label{fig:abcd}
 \end{figure}
 \subsubsection{Umsetzung}
 \label{implDem}
+ In diesem Abschnitt soll die Vorgehensweise von Kolomenkin et al. genauer erläutert werden.
+ 
+ Wie in \ref{defdem} beschrieben, muss zunächst für jeden Vertex die Richtung des Krümmungsgradienten $g_p$ und anschließend die Krümmung  $\kappa(g_p) = g_p^T\Rmnum{2}g_p^T$ in die entsprechende Richtung bestimmt werden. Anschließend werden jene Punkte gesucht, an denen (\ref{eq:demCurve}) zutrifft, um die Kurve letztendlich zu zeichnen.
+ 
+ \textbf{Krümmungsgradient berechnen}\\
+ Um $g_p$ wie in \ref{defdem} definiert berechnen zu können, werden die zweite Fundamentalform $\Rmnum{2}$ und der Tensor $C$ für die Ableitung der Krümmung (\ref{eq:rusin}) pro Vertex bestimmt. Kolomenkin et al. verwenden dazu die Methode von S. Rusinkiewicz aus \cite{CurvDeriv2004} und implementieren sie mit der dort vorgestellten trimesh2 Bibliothek. Um anschließend $g_p$ nach Gleichung \ref{eq:gp} zu ermitteln, wählten sie einen analytischen Ansatz \cite{Demarcating}:
+ 
+ Der Ausdruck $C_{ijk}v^iv^jv^k$ soll nach der Richtung $v$ abgeleitet und gleich Null gesetzt werden. Kolomenkin et al. bringen dazu die Gleichung \ref{eq:gp} in eine andere Form. Es sei $v=[\cos{\theta}, \sin{\theta}]$ der normierte Vektor. $a, b, c, d$ seien die Koeffizienten des Tensors aus Gleichung \ref{eq:rusin}. Danach kann Gleichung \ref{eq:gp} umgeformt werden:
+ \begin{equation}
+ \label{eq:gp1}
+ \begin{split}
+ \theta_{g_p} = \arg\max_{\theta}(a \cos^3{(\theta)} + 3b\cos^2{(\theta)}\sin{(\theta)} +\\
+ + 3c\cos{(\theta)}\sin^2{(\theta)} + d\sin^3{(\theta)})
+ \end{split}
+ \end{equation}
+ Diese Gleichung wird nach $\theta$ abgeleitet, gleich Null gesetzt und umgeformt:
+ \begin{equation}
+ 	\label{eq:gp2}
+ 	\begin{split}
+ 	3b\cos^3(\theta) + 3(2c - a)\cos^2(\theta)\sin(\theta) + \\
+ +	3(d - 2b)\cos(\theta)\sin^2(\theta) - 3c\sin^3(\theta) = 0.
+ 	\end{split}
+ \end{equation}
+ Um den Gleichung \ref{eq:gp2} weiter zu vereinfachen werden nun die höherrangigen cos Terme substituiert. Nach $cos^2(\theta) = 1 - sin^2(\theta)$ ergibt sich:
+ \begin{equation}	
+ \label{eq:gp3}
+ \cos(\theta)=\sin(\theta)\frac{(a-3c)\sin^2(\theta)+2c-a}{(3b-d)sin^2(\theta)-b}.
+ \end{equation}
+ Nachdem nun der $\sin$ Term isoliert ist, können wir durch quadrieren von Gleichung \ref{eq:gp3} $\cos^2(\theta)$ endgültig entfernen:
+ \begin{multline}
+ \label{eq:gp4}
+ 	[(-3c+a)^2+(3b-d)^2\sin^6(\theta+\\
+  +[2(2c-a)(-3c+a)-(3b-d)^2-2b(3b-d)]\sin^4(\theta) \\
+ 	+ [(2c-a)^2+2b(3b-d)+b^2]\sin^2(\theta)+-b^2=0.
+ \end{multline}
+ Diese Gleichung \ref{eq:gp4} ist ein Polynom dritten Grades auf $sin^2(\theta)$, somit können entweder genau eine oder drei reele Wurzeln gefunden werden, die zu zwei bzw. sechs Winkeln führen. 
 
+ Existiert nur eine reele Wurzel, wird der Winkel des Maximums benutzt, um $g_p$ zu bestimmen. Existieren mehr als eine reele Wurzel, wird die Gleichung \ref{eq:gp1} zunächst gauss-geglättet, bevor ein globales Maximum gewählt wird. Maxima, die nahe beieinander liegen fallen so zusammen, wodurch große Maxima mehr Gewicht bekommen. 
+ 
+ \textbf{Kurvenpunkte finden}\\
+ Das Arbeiten auf einer polygonalen Oberfläche ermöglichst es zwar für jeden Vertex eine Richtung $g_p$ zu bestimmen, dabei erhält man allerdings keinerlei Information über die Punkte dazwischen liegenden Punkte auf der Oberfläche. Da diese und verwandte Schwierigkeiten beim Umgang mit Mesh-Oberflächen ein verbreitetes Problem bei der Bestimmung von Kurven auf Meshes ist, existieren zahlreiche Lösungsansätze. Kolomenkin et al. orientieren sich bei ihrer Implementation an \todo{TO-DO: QUELLEN}.
+ 
+  Um Kurvenpunkte zu erhalten die die Gleichung (\ref{eq:demCurve}) erfüllen, werden zunächst Punkte entlang der Kanten des Mesh ermittelt. Sei $p_1,p_2$ eine Meshkante. Unterscheiden sich die Vorzeichen von $\kappa(g_p1)$ und $\kappa(g_p2)$, liegt ein Kurvenpunkt auf der Kante. Die genaue Position wird durch lineare Interpolation zwischen den Punkten bestimmt. 
+ 
+ Eine weitere Schwierigkeit, \todo{TO-DO: FERTIG MACHEN HIER NOCH JA!}
 \subsection{Photic Extremum Lines}
 Die Beleuchtung spielt bei der menschlichen Wahrnehmung eine extrem große Rolle. Große Kontrastunterschiede sind dabei entscheidend zum Erkennen eines Objekts. Sie lassen unser Gehirn auf die Silhouette und die innere Struktur des betrachteten Objekts schließen. Die meisten Methoden, die Feature Lines auf 3D-Objekten suchen, betrachten dabei nur die Geometrie; das Verhalten unter einfallendem Licht wird ignoriert. Deshalb wurden im Jahr 2007 von der Gruppe um Xie et al. die Photic Extremum Lines (kurz: PELs) eingeführt, die sich die Beleuchtung zum Finden von Feature Lines zu Nutze macht \cite{Xie2007} .
 \label{pellabel}
