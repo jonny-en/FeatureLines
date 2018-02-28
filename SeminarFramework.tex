@@ -59,7 +59,8 @@
 
 %-------------------------------------------------------------------------
 \section{Einleitung}
-\todo{TO-DO: Bernst und Englich - Einleitung Allgemein}
+Linien sind ein bewährtes Mittel, um die Form und Beschaffenheit von Objekten darzustellen. Unterschiedliche Anwendungsfälle und -gebiete erfordern dabei unterschiedliche Linien zur sinnvollen Nutzung. Trotz einer großen Anzahl an Linientypen und Algorithmen gibt es noch keine optimale Allzwecklösung.
+	Im Folgenden sollen die Feature Line Methoden Demarcarting Curves von Kolomenkin et al.\cite{Demarcating} und die Photic Extremum Lines von Xie et al.\cite{Xie2007} vorgestellt und bewertet werden.
 \section{Grundlagen}
 
 \subsection{Gradient}
@@ -281,7 +282,7 @@ Zu beachten ist weiterhin, dass die partiellen Ableitungen (Schritt 1,2 und 3) n
 	\label{fig:abcd}
 \end{figure}
 \subsubsection{Beleuchtung}
-Die Grundlage für die Berechnungen der Gradienten und somit der PEL stellt die Funktion $f$ dar, die das darzustellende Objekt beleuchtet.
+Die Ausgangsfunktion der Berechnungen der Gradienten und somit der PEL stellt die Funktion $f$ dar, die das darzustellende Objekt beleuchtet.
 Xie et al. wählen diesbezüglich das in der Computergrafik häufig verwendete Phong-Modell.
 Dieses setzt sich zunächst aus drei verschiedenen Termen zusammen. Dem ambienten, dem diffusen und dem reflektierenden Term:
 \begin{equation}
@@ -378,6 +379,12 @@ Liegt der berechnete Wert unter einem vom Nutzer gesetzten Schwellwert, wird die
 In diesem Abschnitt sollen die Ergebnisse der zugrundeliegenden Paper der Arbeit kurz vorgestellt werden. Dazu werden Demarcating Curves und Photic Extremum Lines zunächst kurz miteinander, danach mit anderen gängigen Feature-Line-Methoden verglichen. Anschließend wird auf Anwendungsgebiete und Performance eingegangen. 
 \subsection{Vergleich}
 \subsubsection{Demarcating Curves und Photic Extremum Lines}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.9\linewidth]{resultspel.png}
+	\caption{Die Darstellung von vier verschiedenen Objekten mittels PEL. Die Ergebnisse erinnern an Zeichnungen.\cite{Xie2007}}
+	\label{anwpel}
+\end{figure}
 \subsubsection{Vergleich mit anderen Methoden}
 Die Autoren vergleichen in ihren Arbeiten die Demarcating Curves \cite{Demarcating} und Photic Extremum Lines \cite{Xie2007} mit einigen anderen verbreiteten Methoden. Beispielhaft wird hier auf die Vergleiche zu Suggestive Contours, sowie zu Ridges \& Valleys eingegangen. Für eine umfangreichere Ausführung und den Vergleich mit weiteren Methoden wird auf die Quellen verwiesen. 
 
@@ -394,7 +401,7 @@ Weil Ridges \& Valleys mit der Stärke der Krümmung der Geometrie und nicht mit
 \begin{figure}
 	\centering
 		\includegraphics[width=0.9\linewidth]{vglpel2.png}
-	\caption{Hier muss noch der Text hin \cite{Xie2007}}
+	\caption{Die Darstellung eines künstlich erstellten Objekts mittels PEL im Vergleich zu anderen Feature Line Methoden \cite{Xie2007}.}
 	\label{vglpel2}
 \end{figure}
 \subsection{Performance}
@@ -430,14 +437,18 @@ Mit den
 
 Die Photic Extremum Lines charakterisieren die signifikanten Variationen der Beleuchtung auf 3D-Oberflächen. Dabei stehen dem Nutzer durch die Anzahl der Lichtquellen, die Lichtposition(en), und den Schwellwert eine hohe Auswahl an Anpassungsmöglichkeiten zur Verfügung. Da die Ergebnisse sehr stark an ein von Künstlern gezeichnetes Bild erinnern (siehe Abbildung \ref{ausblpel}) und damit unserer eigenen Wahrnehmung des Objekts sehr nahe kommen, können Photic Extremung Lines insbesondere für Anwendungen interessant sein, die sich auf die verständliche und illustrative Darstellung von Objekten konzentrieren. Auch eine von Xie et al \cite{Xie2007} durchgeführte Befragung unter Künstlern besagt, dass 9 von 10 Künstlern die Ergebnisse der PELs den der anderen vorgelegten Verfahren (Suggestive Contours, Ridges \& Valleys) vorziehen würden. 
 \section{Zusammenfassung/Schlussfolgerung/Ausblick}
+
+
 \begin{figure}
 	\centering
 		\includegraphics[width=0.9\linewidth]{ausblpel.png}
-	\caption{Die Darstellung eines 3D-Scans mittels Photic Extremum Lines. Die äußeren Grenzen des Körpers sind durch einfachen Konturen dargestellt. Die Knochenstruktur (rechts eingefärbt) wurde zuvor als Isofläche aus dem Dichtefeld des Scans extrahiert. Als Ausblick ihrer Arbeit erwähnen Xie et al. eine direkte Darstellung ohne vorherige Extraktion. \cite{Xie2007}}
+	\caption{Die Darstellung eines Volumen-Scans mittels Photic Extremum Lines. Die äußeren Grenzen des Körpers sind durch einfachen Konturen dargestellt. Die Knochenstruktur (rechts eingefärbt) wurde zuvor als Isofläche aus dem Dichtefeld des Scans extrahiert. Als Ausblick ihrer Arbeit erwähnen Xie et al. eine direkte Darstellung ohne vorherige Extraktion. \cite{Xie2007}}
 	\label{ausblpel}
 \end{figure}
-\todo{TO-DO: Bernst und Englich - Zusammenfassung/Schlussfolgerung/Ausblick}
+\todo{TO-DO: Bernst und Englich - Zusammenfassung}
+Es lässt sich abschließend sagen, dass nicht jede Methode für jedes Gebiet gleichermaßen gut anwendbar ist. In bestimmten Aufgabenfeldern sind von Menschen gezeichnete Konturen und Linien immer noch der qualitative Standard. Die beiden vorgestellten Methoden lieferten allerdings gutes Feedback von Fachexperten (Archäologen und Künstler).
 
+Als Ausblick nennt die Gruppe um Xie die weitere Verbesserung der Performance durch Optimierung der Implementation und das direkte Zeichnen von PELs aus Volumendaten ohne vorherige Extraktion von Isoflächen (siehe Abbildung \ref{ausblpel}). 
 
 %-------- *.bib file with references and style file
 \bibliographystyle{literaturStyle}
