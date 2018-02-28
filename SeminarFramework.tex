@@ -225,7 +225,7 @@ Aus der Definition des Krümmungsgradienten ergibt sich nun die Definition der e
  Existiert nur eine reele Wurzel, wird der Winkel des Maximums benutzt, um $g_p$ zu bestimmen. Existieren mehr als eine reele Wurzel, wird die Gleichung \ref{eq:gp1} zunächst gauss-geglättet, bevor ein globales Maximum gewählt wird. Maxima, die nahe beieinander liegen fallen so zusammen, wodurch große Maxima mehr Gewicht bekommen. 
  
  \textbf{Kurvenpunkte finden}\\
- Das Arbeiten auf einer polygonalen Oberfläche ermöglichst es zwar für jeden Vertex eine Richtung $g_p$ zu bestimmen, dabei erhält man allerdings keiner Information über die liegenden Punkte auf der Oberfläche. Da diese und verwandte Schwierigkeiten beim Umgang mit Mesh-Oberflächen verbreitete Probleme bei der Bestimmung von Kurven auf Meshes sind, existieren zahlreiche Lösungsansätze. Kolomenkin et al. orientieren sich bei ihrer Implementation an \todo{TO-DO: QUELLEN}.
+ Das Arbeiten auf einer polygonalen Oberfläche ermöglichst es zwar für jeden Vertex eine Richtung $g_p$ zu bestimmen, dabei erhält man allerdings keiner Information über die liegenden Punkte auf der Oberfläche. Da diese und verwandte Schwierigkeiten beim Umgang mit Mesh-Oberflächen verbreitete Probleme bei der Bestimmung von Kurven auf Meshes sind, existieren zahlreiche Lösungsansätze. Kolomenkin et al. orientieren sich bei ihrer Implementation an \cite{Ohtake}, \cite{DeCarlo:2007:HLF} und \cite{JuddDA07}.
  
   Um Kurvenpunkte zu erhalten die die Gleichung (\ref{eq:demCurve}) erfüllen, werden zunächst Punkte entlang der Kanten des Mesh ermittelt. Sei $p_1,p_2$ eine Meshkante. Unterscheiden sich die Vorzeichen von $\kappa(g_p1)$ und $\kappa(g_p2)$, liegt ein Kurvenpunkt auf der Kante. Die genaue Position wird durch lineare Interpolation der Krümmungen der beiden Punkte bestimmt.
  
@@ -233,7 +233,7 @@ Aus der Definition des Krümmungsgradienten ergibt sich nun die Definition der e
  
  Unterscheiden sich die Richtungen der Gradienten dreier Vertices eines Faces stark (in \cite{Demarcating}: Winkel zwischen den Gradienten $> \pi/4$), wird dieses Face nicht weiter betrachtet. Unterscheidet sich nur eine Gradientenrichtung stark, aber die anderen beiden sind sich ähnlich, so wird der Durchschnitt der beiden ähnlichen Gradientenrichtungen bestimmt. Anschließend wird die Krümmung des dritten Vertex in diese neue Richtung bestimmt und zur Bestimmung der Kurvenpunkte verwertet. 
  
- \textbf{Achtung:} Der so berechne Gradient für den dritten Vertex liegt Möglicherweise nicht auf dessen Tangentenebene. In diesem Fall muss der Vektor rotiert werden. \todo{TO-DO: QUELLEN} 
+ \textbf{Achtung:} Der so berechne Gradient für den dritten Vertex liegt Möglicherweise nicht auf dessen Tangentenebene. In diesem Fall muss der Vektor rotiert werden. Dazu verweisen die Autoren auf \cite{CurvDeriv2004} und \cite{Ohtake}.
  
   Kurvenpunkte auf benachbarten Meshkanten werden schließlich durch gerade Linien verbunden, um die Kurve zu erzeugen.
 \subsection{Photic Extremum Lines}
@@ -379,22 +379,25 @@ Liegt der berechnete Wert unter einem vom Nutzer gesetzten Schwellwert, wird die
 In diesem Abschnitt sollen die Ergebnisse der zugrundeliegenden Paper der Arbeit kurz vorgestellt werden. Dazu werden Demarcating Curves und Photic Extremum Lines zunächst kurz miteinander, danach mit anderen gängigen Feature-Line-Methoden verglichen. Anschließend wird auf Anwendungsgebiete und Performance eingegangen. 
 \subsection{Vergleich}
 \subsubsection{Demarcating Curves und Photic Extremum Lines}
-\begin{figure}
-	\centering
-		\includegraphics[width=0.9\linewidth]{resultspel.png}
-	\caption{Die Darstellung von vier verschiedenen Objekten mittels PEL. Die Ergebnisse erinnern an Zeichnungen.\cite{Xie2007}}
-	\label{anwpel}
-\end{figure}
+Vergleicht man die hier vorgestellten Methoden, stellt man fest, dass viele Konzepte in beiden Algortihmen angewendet werden. Bei den Demarcating Curves wird der Gradient der Krümmung genutzt, um interessante Punkte zu markieren. Bei den PELs werden die Punkte anhand des Gradienten der Beleuchtung ermittelt. In beiden Fällen wird also eine starke Veränderung einer Eigenschaft zum Marker für wichtig erscheinende Regionen. Betrachtet man die Ergebnisse der beiden Algorithmen (Abschnitt \ref{ergebnis}), lassen sich auch hier Ähnlichkeiten erkennen. Diese sind möglicherweise dadurch zu erklären, dass die markanten Punkte der eigentlichen Geometrie einer Oberfläche eben die Punkte sind, die Veränderungen der Helligkeit bei der Beleuchtung hervorrufen. 
+
+Die Demarcating Curves schaffen es, auch sehr feine Strukturen blick-unabhängig hervorzuheben. PELs sind dagegen immer abhängig von der Position der Lichter. Somit können Abweichungen auf der Oberfläche parallel zum Sichtvektor aufgrund der frontalen Beleuchtung verschwinden. 
 \subsubsection{Vergleich mit anderen Methoden}
 Die Autoren vergleichen in ihren Arbeiten die Demarcating Curves \cite{Demarcating} und Photic Extremum Lines \cite{Xie2007} mit einigen anderen verbreiteten Methoden. Beispielhaft wird hier auf die Vergleiche zu Suggestive Contours, sowie zu Ridges \& Valleys eingegangen. Für eine umfangreichere Ausführung und den Vergleich mit weiteren Methoden wird auf die Quellen verwiesen. 
+\begin{figure*}
+	\centering
+	\includegraphics[width=0.8\linewidth]{demvgl.png}
+	\caption{Scan eines Relikts. Beleuchtet mit exaggerated shading. Es zeigt die Kombination von Demarcating Curves und Beleuchtungsmethoden. \cite{Demarcating}}
+	\label{im:demvgl}
+\end{figure*}
 
 \textbf{Vergleich: Suggestive Contours}\\
-Da sowohl die Suggestive Contours, als auch die Demarcating Curves auf hyperbolen Regionen (also Regionen mit negativer Gauskrümmung) der Oberfläche liegen, lassen sich bei der Betrachtung viele Übereinstimmung bei den hervorgehobenen Strukturen erkennen. Genauer sind die Kurvenpunkte der Demarcating Curve eine Teilmenge der Vereinigung aller Suggestive Contours Punkte, aus allen möglichen Blickrichtungen betrachtet \cite{Demarcating}(siehe Abbildung: \todo{TO-DO}).  
+Da sowohl die Suggestive Contours, als auch die Demarcating Curves auf hyperbolen Regionen (also Regionen mit negativer Gauskrümmung) der Oberfläche liegen, lassen sich bei der Betrachtung viele Übereinstimmung bei den hervorgehobenen Strukturen erkennen. Genauer sind die Kurvenpunkte der Demarcating Curve eine Teilmenge der Vereinigung aller Suggestive Contours Punkte, aus allen möglichen Blickrichtungen betrachtet \cite{Demarcating}(siehe Abbildung: \ref{im:demvgl}).  
 
 Die Photic Extremum Lines zeigen ihren Unterschied gegenüber den Suggestive Contours vor allem bei der Darstellung von Objekten, in denen sowohl konkave, als auch konvexe Oberflächen zu finden sind. Während bei Suggestive Contours ein Schwellwert gewählt werden muss, der meistens dafür sorgt, dass entweder konkave, oder konvexe Flächen detailliert dargestellt werden, so ist es mit den PELs möglich, beide Bereiche gleichzeitig darzustellen \cite{Xie2007}. Ersichtlich wird dies in Abbildung \ref{vglpel2}.
 
 \textbf{Vergleich: Ridges \& Valleys}\\
-Gegeben der Idee von Demarcating Curves (siehe \ref{defdem}) liegt die Vermutung Nahe, dass die Kurven zwischen den ''Hügeln und Tälern'' (Ridges \& Valleys) auf der Oberfläche verlaufen. Mathematisch lässt sich diesen Idee zwar modellieren \cite{Demarcating}, in der Praxis liegen die Demarcating Curves allerdings nicht zwischen den Kurven der Ridges \& Valleys (siehe Abbildung \todo{TODO}). In Abbildung \todo{TODO} wird deutlich, dass besonders abgeschlossene Strukturen (z.B. auf den Beinen der Figur) durch die Demarcating Curves deutlich besser hervorgehoben werden, als durch die Valley.
+Gegeben der Idee von Demarcating Curves (siehe \ref{defdem}) liegt die Vermutung Nahe, dass die Kurven zwischen den ''Hügeln und Tälern'' (Ridges \& Valleys) auf der Oberfläche verlaufen. Mathematisch lässt sich diesen Idee zwar modellieren \cite{Demarcating}, in der Praxis liegen die Demarcating Curves allerdings nicht zwischen den Kurven der Ridges \& Valleys. In Abbildung \ref{im:demvgl} wird außerdem deutlich, dass besonders abgeschlossene Strukturen (z.B. auf den Beinen der Figur) durch die Demarcating Curves deutlich besser hervorgehoben werden, als durch die Valley.
 
 Die Ergebnisse der Photic Extremum Lines weichen von denen der Ridges \& Valleys besonders bei der Darstellung weicher Strukturen ab.
 Weil Ridges \& Valleys mit der Stärke der Krümmung der Geometrie und nicht mit dem beleuchteten Objekt arbeiten, werden weiche Übergänge, die sich erst mittels Beleuchtung des Objekts bemerkbar machen, vernachlässigt (siehe Abbildung \ref{vglpel2}). 
@@ -427,17 +430,24 @@ Kopf & 320K & 1.684 \\
 \end{table}
 
 \subsection{Ergebnisse und Anwendung}
+\label{ergebnis}
 \begin{figure*}
 	\centering
 		\includegraphics[width=0.9\linewidth]{anwpel.png}
 	\caption{Die Darstellung eines Kopfes mittels Photic Extremum Lines und anderer Feature Line Methoden im Vergleich zu einer von einem Künstler angefertigten Zeichnung. Es wird die große Übereinstimmung von den Linien des Zeichners und den Linien der PELs deutlich. \cite{Xie2007}}
 	\label{anwpel}
 \end{figure*}
-Mit den 
+Mit den Demarcating Curves stellen Kolomenkin et al. eine neue Art von Kurven vor, die markante Strukturen auf Oberflächen hervorhebt. Im Vergleich mit anderen etablierten Feature Line Methoden bieten die Demarcating Curves einen Mehrwert und erfassen auch Strukturen, die von den bekannten Feature Line Methoden nicht erfasst werden können. Vor dem Hintergrund der Anwendung in einem archäologischen Kontext sind die neuen Kurven scheinbar gut geeignet. In einer Befragung von Fachleuten stießen die Demarcating Curves bei der illustrativen Darstellung von Relikten auf größtenteils positives Feedback. Im direkten Vergleich mit Darstellungen aus anderen Methoden bevorzugten die Fachleute meist Demarcating Curves. Insbesondere in Kombination mit einem beleuchteten (shaded) Modell (Abbildung: \ref{im:shadedDem})erzielen die Kurven optisch ansprechende Ergebnisse. \cite{Demarcating}
 
-Die Photic Extremum Lines charakterisieren die signifikanten Variationen der Beleuchtung auf 3D-Oberflächen. Dabei stehen dem Nutzer durch die Anzahl der Lichtquellen, die Lichtposition(en), und den Schwellwert eine hohe Auswahl an Anpassungsmöglichkeiten zur Verfügung. Da die Ergebnisse sehr stark an ein von Künstlern gezeichnetes Bild erinnern (siehe Abbildung \ref{ausblpel}) und damit unserer eigenen Wahrnehmung des Objekts sehr nahe kommen, können Photic Extremung Lines insbesondere für Anwendungen interessant sein, die sich auf die verständliche und illustrative Darstellung von Objekten konzentrieren. Auch eine von Xie et al \cite{Xie2007} durchgeführte Befragung unter Künstlern besagt, dass 9 von 10 Künstlern die Ergebnisse der PELs den der anderen vorgelegten Verfahren (Suggestive Contours, Ridges \& Valleys) vorziehen würden. 
+Die Photic Extremum Lines charakterisieren die signifikanten Variationen der Beleuchtung auf 3D-Oberflächen. Dabei stehen dem Nutzer durch die Anzahl der Lichtquellen, die Lichtposition(en), und den Schwellwert eine hohe Auswahl an Anpassungsmöglichkeiten zur Verfügung. Da die Ergebnisse sehr stark an ein von Künstlern gezeichnetes Bild erinnern (siehe Abbildung \ref{ausblpel}) und damit unserer eigenen Wahrnehmung des Objekts sehr nahe kommen, können Photic Extremum Lines insbesondere für Anwendungen interessant sein, die sich auf die verständliche und illustrative Darstellung von Objekten konzentrieren. Auch eine von Xie et al \cite{Xie2007} durchgeführte Befragung unter Künstlern besagt, dass 9 von 10 Künstlern die Ergebnisse der PELs den der anderen vorgelegten Verfahren (Suggestive Contours, Ridges \& Valleys) vorziehen würden. 
 \section{Zusammenfassung/Schlussfolgerung/Ausblick}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{shadedDem.png}
+	\caption{Scan eines Relikts. Beleuchtet mit exaggerated shading. Es zeigt die Kombination von Demarcating Curves und Beleuchtungsmethoden. \cite{Demarcating}}
+	\label{im:shadedDem}
+\end{figure}
 
 \begin{figure}
 	\centering
@@ -445,10 +455,12 @@ Die Photic Extremum Lines charakterisieren die signifikanten Variationen der Bel
 	\caption{Die Darstellung eines Volumen-Scans mittels Photic Extremum Lines. Die äußeren Grenzen des Körpers sind durch einfachen Konturen dargestellt. Die Knochenstruktur (rechts eingefärbt) wurde zuvor als Isofläche aus dem Dichtefeld des Scans extrahiert. Als Ausblick ihrer Arbeit erwähnen Xie et al. eine direkte Darstellung ohne vorherige Extraktion. \cite{Xie2007}}
 	\label{ausblpel}
 \end{figure}
-\todo{TO-DO: Bernst und Englich - Zusammenfassung}
-Es lässt sich abschließend sagen, dass nicht jede Methode für jedes Gebiet gleichermaßen gut anwendbar ist. In bestimmten Aufgabenfeldern sind von Menschen gezeichnete Konturen und Linien immer noch der qualitative Standard. Die beiden vorgestellten Methoden lieferten allerdings gutes Feedback von Fachexperten (Archäologen und Künstler).
+In dieser Arbeit wurden mit den Demarcating Curves und den Photic Extremum Lines zwei Methoden zum Finden von Feature Lines auf polygonalen Oberflächen vorgestellt. Die beiden Methoden ergänzen die bisher bekannten Algorithmen und liefern vergleichbare Ergebnisse. Demarcating Curves arbeiten dabei auf der eigentlichen Geometrie und betrachten Krümmungseigenschaften, die Photic Extremum Lines suchen nach maximalen Unterschieden in der Beleuchtung eines Objekts. 
 
-Als Ausblick nennt die Gruppe um Xie die weitere Verbesserung der Performance durch Optimierung der Implementation und das direkte Zeichnen von PELs aus Volumendaten ohne vorherige Extraktion von Isoflächen (siehe Abbildung \ref{ausblpel}). 
+Es lässt sich abschließend sagen, dass nicht jede Methode für jedes Anwendungsgebiet gleichermaßen gut geeignet ist. In bestimmten Aufgabenfeldern sind von Menschen gezeichnete Konturen und Linien immer noch der qualitative Standard. Die beiden vorgestellten Methoden lieferten allerdings gute Ergebnisse auf ihren Gebieten und positives Feedback von Fachexperten (Archäologen und Künstler).
+
+Für die weitere Verwendung der Demarcating Curves schlagen Kolomenkin et al. \cite{Demarcating} vor, die aus den Kurven gewonnenen Informationen weiter zu verwenden.Sie nennen hier die digitale Archivierung und den bildbasierten Vergleich von Fundstücken.  
+Die Gruppe um Xie nennt als Ausblick die weitere Verbesserung der Performance durch Optimierung der Implementation und das direkte Zeichnen von PELs aus Volumendaten ohne vorherige Extraktion von Isoflächen (siehe Abbildung \ref{ausblpel}). 
 
 %-------- *.bib file with references and style file
 \bibliographystyle{literaturStyle}
