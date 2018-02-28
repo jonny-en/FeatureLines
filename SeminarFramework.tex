@@ -257,7 +257,7 @@ Der Gradient eines Punktes einer Oberfläche $S : D \subset R^{2} \longrightarro
 \nabla f = \frac{ f_{ u }G - f_{ v }F }{EG - F^{ 2 }  }S_{ u } + \frac{ f_{ v }E - f_{ u }F }{EG - F^{ 2 } } S_{ v }
 	\label{eq:gradientf}
 \end{equation}
-$S_{ u } $ und $S_{ v }$ stehen dabei für die Tangentenvektoren des Punktes. Die jeweiligen Koeffizienten setzen sich aus den partiellen Ableitungen $f_{ u }$ und $f_{ v }$ und den Koeffizienten der zweiten Fundamentalform E,G und F des Objekts (der Oberfläche S) zusammen. Die Formeln zur Berechnung dieser Koeffizienten finden sich in Abschnitt \ref{fundamental}.
+$S_{ u } $ und $S_{ v }$ stehen dabei für die Tangentenvektoren des Punktes. Die jeweiligen Koeffizienten setzen sich aus den partiellen Ableitungen $f_{ u }$ und $f_{ v }$ und den Koeffizienten der ersten Fundamentalform E,G und F des Objekts (der Oberfläche S) zusammen. Die Formeln zur Berechnung dieser Koeffizienten finden sich in Abschnitt \ref{fundamental}.
 
 Gegeben den Gradienten $\nabla f$, kann nun die zweite Partielle Ableitung in dessen Richtung berechnet werden. Wichtig sind die Nullstellen (Extrema) der Funktion:
 \begin{equation}
@@ -400,7 +400,7 @@ Weil Ridges \& Valleys mit der Stärke der Krümmung der Geometrie und nicht mit
 \end{figure}
 \subsection{Performance}
 
-Der Performance-Test der Photic Extremum Lines wurde von Xie et al. \cite{Xie2007} auf einem Desktop PC mit 3.2 GHz Xeon-Prozessor und 3GB Arbeitsspeicher durchgeführt. Die getesteten Modelle sind die im Paper verwendeten. Zwar ist das Verfahren auf komplizierten Objekten nicht Echtzeit-fähig, die Betrachtung sollte aber mit aktueller Technik zumindest bei simplen Modellen zufriedenstellend flüssig laufen.
+Der Performance-Test der Photic Extremum Lines wurde von Xie et al. \cite{Xie2007} auf einem Desktop PC mit 3.2 GHz Xeon-Prozessor und 3GB Arbeitsspeicher durchgeführt. Die getesteten Modelle sind die im Paper verwendeten. Zwar ist das Verfahren auf komplizierten Objekten nicht echtzeitfähig, die Betrachtung sollte aber mit aktueller Technik zumindest bei simplen Modellen zufriedenstellend flüssig laufen.
 Wichtig ist zu erwähnen, dass sich diese Zeiten nur auf eine Betrachtung mit Kamerabewegung auswirken. Wird das Modell nur aus einer bestimmten Richtung betrachtet, kann der Zeitaufwand zur einmaligen Berechnung vernachlässigt werden. 
 \begin{table}[htb]
 
