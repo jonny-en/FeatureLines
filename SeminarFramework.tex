@@ -50,10 +50,10 @@
 \maketitle
 
 \begin{abstract}
-   \todo{TO-DO: Zusammenfassung}\\
+   Die Arbeit beschäftigt sich mit verschiedenen Methoden zum Finden von Feature Lines. Dabei werden insbesondere die von Kolomenkin et al. im Paper \cite{Demarcating} vorgestellten Demarcating Curves und die von Xie et al. im Paper \cite{Xie2007} vorgestellten Photic Extremum Lines betrachtet. Nach dem Einführen der Grundlagen, werden beide Konzepte zunächst erläutert und darauffolgend miteinander verglichen. Weiterhin erfolgt ein Vergleich mit anderen Methoden und das Vorzeigen der Ergebnisse.
     \\
 %% Uncomment follow line and add some specific keywords for your paper
-\textbf{keywords: TO-DO, KEYWORD 1, KEYWORD 2}
+\textbf{keywords: Feature Lines, Photic Extremum Lines, Demarcating Curves}
 
 \end{abstract}
 
@@ -277,7 +277,7 @@ Zu beachten ist weiterhin, dass die partiellen Ableitungen (Schritt 1,2 und 3) n
 \begin{figure}
 	\centering
 		\includegraphics[width=0.7\linewidth]{abcd.png}
-	\caption{(a): Die beleuchtete Oberfläche; (b): Die Maxima der zweiten partiellen Ableitung in Richtung des Gradienten. Diese werden für die PELs herausgefiltert; (c): Die Minima der zweiten partiellen Ableitung in Richtung des Gradienten; (d): Maxima und Minima ergeben geschlossene Bereiche, die sich dann in $D_{w}||\nabla f || < 0$ (gelb) und $D_{w}||\nabla f || < 0$ (grün) einteilen lassen.}
+	\caption{(a): Die beleuchtete Oberfläche; (b): Die Maxima der zweiten partiellen Ableitung in Richtung des Gradienten. Diese werden für die PELs herausgefiltert; (c): Die Minima der zweiten partiellen Ableitung in Richtung des Gradienten; (d): Maxima und Minima ergeben geschlossene Bereiche, die sich dann in $D_{w}||\nabla f || < 0$ (gelb) und $D_{w}||\nabla f || < 0$ (grün) einteilen lassen. \cite{Xie2007}}
 	\label{fig:abcd}
 \end{figure}
 \subsubsection{Beleuchtung}
@@ -332,7 +332,7 @@ Hervorzuheben ist, dass die Bereiche der Hilfslichter nicht von der Sicht abhän
 \begin{figure}
 	\centering
 		\includegraphics[width=0.7\linewidth]{rabbit.png}
-	\caption{(a) und (d): Der nur durch das Hauptlicht beleuchtete Hase und zugehörige PELS. (b) und (c): Maximierung/Minimierung des Kontrasts der Beleuchtung des Bereiches um das Auge des Hasen mithilfe eines vor dem Auge positionierten Hilfslicht. (e) und (f): An den Grenzen der jeweiligen Bereiche sind in den zugehörigen PELs keine Unstetigkeiten erkennbar.}
+	\caption{(a) und (d): Der nur durch das Hauptlicht beleuchtete Hase und zugehörige PELS. (b) und (c): Maximierung/Minimierung des Kontrasts der Beleuchtung des Bereiches um das Auge des Hasen mithilfe eines vor dem Auge positionierten Hilfslicht. (e) und (f): An den Grenzen der jeweiligen Bereiche sind in den zugehörigen PELs keine Unstetigkeiten erkennbar. \cite{Xie2007}}
 	\label{fig:rabbit}
 \end{figure}
 \subsubsection{Implementationshinweise}
@@ -378,17 +378,22 @@ Liegt der berechnete Wert unter einem vom Nutzer gesetzten Schwellwert, wird die
 \subsection{Vergleich}
 \subsubsection{Demarcating Curves und Photic Extremum Lines}
 \subsubsection{Vergleich mit anderen Methoden}
-\begin{figure*}
-	\centering
-		\includegraphics[width=0.7\linewidth]{vglpel.png}
-	\caption{Hier muss noch der Text hin}
-\end{figure*}
+\textbf{Vergleich: Suggestive Contours}\\
+Die Photic Extremum Lines zeigen ihren Unterschied gegenüber den Suggestive Contours vor allem bei der Darstellung von Objekten, in denen sowohl konkave, als auch konvexe Oberflächen zu finden sind. Während bei Suggestive Contours ein Schwellwert gewählt werden muss, der meistens dafür sorgt, dass entweder konkave, oder konvexe Flächen detailliert dargestellt werden, so ist es mit den PELs möglich, beide Bereiche gleichzeitig darzustellen \cite{Xie2007}. Ersichtlich wird dies in Abbildung \ref{vglpel2}.
+
+\textbf{Vergleich: Ridges \& Valleys}\\
+Die Ergebnisse der Photic Extremum Lines weichen von denen der Ridges \& Valleys besonders bei der Darstellung weicher Strukturen ab.
+Weil Ridges \& Valleys mit der Stärke der Krümmung der Geometrie und nicht mit dem beleuchteten Objekt arbeiten, werden weiche Übergänge, die sich erst mittels Beleuchtung des Objekts bemerkbar machen, vernachlässigt (siehe Abbildung \ref{vglpel2}). 
 \begin{figure}
 	\centering
 		\includegraphics[width=0.9\linewidth]{vglpel2.png}
-	\caption{Hier muss noch der Text hin}
+	\caption{Hier muss noch der Text hin \cite{Xie2007}}
+	\label{vglpel2}
 \end{figure}
 \subsection{Performance}
+
+Der Performance-Test der Photic Extremum Lines wurde von Xie et al. \cite{Xie2007} auf einem Desktop PC mit 3.2 GHz Xeon-Prozessor und 3GB Arbeitsspeicher durchgeführt. Die getesteten Modelle sind die im Paper verwendeten. Zwar ist das Verfahren auf komplizierten Objekten nicht Echtzeit-fähig, die Betrachtung sollte aber mit aktueller Technik zumindest bei simplen Modellen zufriedenstellend flüssig laufen.
+Wichtig ist zu erwähnen, dass sich diese Zeiten nur auf eine Betrachtung mit Kamerabewegung auswirken. Wird das Modell nur aus einer bestimmten Richtung betrachtet, kann der Zeitaufwand zur einmaligen Berechnung vernachlässigt werden. 
 \begin{table}[htb]
 
 \begin{tabular}{|l|ll|}
@@ -398,28 +403,28 @@ Modell & $\#\bigtriangleup$ & Sekunden/Frame\\
 Synth. Oberfläche. & 44K & 0.170 \\
 Max-Planck & 98K & 0.350 \\
 Hase & 144K & 0.515 \\
-Skulptur & 200K & 0.869 \\
 Kopf & 320K & 1.684 \\
 
 \hline
 \end{tabular}
-\caption{Eine Tabelle mit Bildunterschrift }
+\caption{Performance der Photic Extremum Lines. Die zugehörigen Modelle sind in den Abbildungen \ref{vglpel2}, \ref{anwpel}, \ref{fig:rabbit} und \ref{ausblpel} zu sehen.  \cite{Xie2007}} 
 \label{tab:TableExample}
 \end{table}
 
 \subsection{Ergebnisse und Anwendung}
 \begin{figure*}
 	\centering
-		\includegraphics[width=0.7\linewidth]{anwpel.png}
-	\caption{Hier muss noch der Text hin}
+		\includegraphics[width=0.9\linewidth]{anwpel.png}
+	\caption{Die Darstellung eines Kopfes mittels Photic Extremum Lines und anderer Feature Line Methoden im Vergleich zu einer von einem Künstler angefertigten Zeichnung. Es wird die große Übereinstimmung von den Linien des Zeichners und den Linien der PELs deutlich. \cite{Xie2007}}
+	\label{anwpel}
 \end{figure*}
-
-Die PELs charakterisieren die signifikaten Variationen der Beleuchtung auf 3D-Oberflächen. Dabei stehen dem Nutzer eine hohe Auswahl an Anpassungsmöglichkeiten zur Verfügung. Dazu gehören die Anzahl der Lichtquellen,  die Lichtposition(en), und der Schwellwert.
+Die Photic Extremum Lines charakterisieren die signifikanten Variationen der Beleuchtung auf 3D-Oberflächen. Dabei stehen dem Nutzer durch die Anzahl der Lichtquellen, die Lichtposition(en), und den Schwellwert eine hohe Auswahl an Anpassungsmöglichkeiten zur Verfügung. Da die Ergebnisse sehr stark an ein von Künstlern gezeichnetes Bild erinnern (siehe Abbildung \ref{ausblpel}) und damit unserer eigenen Wahrnehmung des Objekts sehr nahe kommen, können Photic Extremung Lines insbesondere für Anwendungen interessant sein, die sich auf die verständliche und illustrative Darstellung von Objekten konzentrieren. Auch eine von Xie et al \cite{Xie2007} durchgeführte Befragung unter Künstlern besagt, dass 9 von 10 Künstlern die Ergebnisse der PELs den der anderen vorgelegten Verfahren (Suggestive Contours, Ridges \& Valleys) vorziehen würden. 
 \section{Zusammenfassung/Schlussfolgerung/Ausblick}
 \begin{figure}
 	\centering
 		\includegraphics[width=0.9\linewidth]{ausblpel.png}
-	\caption{Hier muss noch der Text hin}
+	\caption{Die Darstellung eines 3D-Scans mittels Photic Extremum Lines. Die äußeren Grenzen des Körpers sind durch einfachen Konturen dargestellt. Die Knochenstruktur (rechts eingefärbt) wurde zuvor als Isofläche aus dem Dichtefeld des Scans extrahiert. Als Ausblick ihrer Arbeit erwähnen Xie et al. eine direkte Darstellung ohne vorherige Extraktion. \cite{Xie2007}}
+	\label{ausblpel}
 \end{figure}
 \todo{TO-DO: Bernst und Englich - Zusammenfassung/Schlussfolgerung/Ausblick}
 
@@ -428,3 +433,4 @@ Die PELs charakterisieren die signifikaten Variationen der Beleuchtung auf 3D-Ob
 \bibliographystyle{literaturStyle}
 \bibliography{literatur}
 \end{document}
+#
