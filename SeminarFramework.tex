@@ -74,7 +74,7 @@ Die Einträge des Vektors sind dabei die partiellen Ableitungen in x-,y- und z-R
 Gegeben sei eine durch eine offene Abbildung definierte Oberfläche $S : D \subset R^{2} \longrightarrow R^{3}$ mit den Parametern $u$ und $v$. Dann heißt die Abbildung I, die jedem Punkt $p \in S$ die Einschränkung des euklidischen Skalarproduktes auf die Tangentialebene $T_{p}S$ zuordnet \textit{Erste Fundamentalform} von S
 \begin{equation}
 \resizebox{.9\hsize}{!}{$
-I: \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}, (w_{1},w_{2}) \mapsto E(u,v)^{2} + 2F(u,v) + G(u,v)^{2}$}
+\Rmnum{1}: \mathbb{R}^{2} \rightarrow \mathbb{R}^{3}, (w_{1},w_{2}) \mapsto E(u,v)^{2} + 2F(u,v) + G(u,v)^{2}$}
 \end{equation}	
 Diese Form erlaubt es, Messungen innerhalb der Oberfläche vorzunehmen. Dazu gehören das Bestimmen der Länge von Kurven, der Winkel von Tangentenvektoren und des Flächeninhalts bestimmter Teilbereiche.
 \\
@@ -92,7 +92,31 @@ G(u,v) = |\frac{\partial S}{\partial v}(u,v)|^{2}
 \end{equation}	
 \\
 \\	
-\todo{TO-DO: Bernst Zweite}
+Ist weiterhin die Fläche regulär, die erste Fundamentalform also positiv-definit, kann der Fläche ein Einheitsvektor $\vec{v}(u,v)$ zugeordnet werden. Dieser ist durch die Parameter $u$ und $v$ eines Punktes gegeben:
+\begin{equation}
+	\vec{v}(u,v)=\frac{X_u(u,v)\times X_v(u,v)}{|X_u(u,v)\times X_v(u,v)|}
+\end{equation}
+Die Koeffizienten der zweiten Fundamentalform dieses Punktes lauten dann:
+\begin{equation}
+	\begin{split}
+	L(u,v)&= \vec{v} \cdot X_{uu}(u,v)\\
+	M(u,v)&= \vec{v} \cdot X_{uv}(u,v)\\
+	N(u,v)&= \vec{v} \cdot X_{vv}(u,v),
+	\end{split}
+\end{equation}
+wobei $X_{uu}$, $X_{uv}$ und $X_{vv}$ für die zweiten partiellen Ableitungen nach den Parametern stehen. 
+Weitere Darstellungsformen sind die quadratische Form:
+\begin{equation}
+	\Rmnum{2}: \mathbb{R}^2 \rightarrow \mathbb{R}, (w_1, w_2) \mapsto Lw_1^2+2 M w_1 w_2 + Nw_2^2,
+\end{equation}
+sowie die Darstellung als Matrix:
+\begin{equation}
+	(h_{ij}) = \begin{pmatrix}
+	L & M \\
+	M & N
+	\end{pmatrix}
+\end{equation}
+Während die erste Fundamentalform $\Rmnum{1}$ Informationen über die inneren oder intrinsischen Eigenschaften einer Oberfläche liefert, können mit der zweite Fundamentalform $\Rmnum{2}$ extrinsische Eigenschaften bestimmt werden. Sie hängt von der Lage der Fläche im umgebenden Raum ab und wird zum Beispiel für die Bestimmung von Krümmungen verwendet. Für diese Arbeit istihre Bestimmung in Abschnitt \ref{implDem} zur Bestimmung des Krümmungsgradienten mit der Methode aus \cite{CurvDeriv2004} nötig.  
 \subsection{Normalschnitt und Normalkrümmung}
 \label{normalschnitt}
 Der Normalschnitt an einem Punkt $p$ auf einer regulären Fläche im $\mathbb{R}^3$ ist die Kurve, die sich aus dem Schnitt der Oberfläche und der Ebene ergibt, die von einem Tangentialvektor $\vec{v}$ und der Normale $\vec{n}$ an diesem Punkt aufgespannt wird.\\\\Die Krümmung der ebenen Kurve, die der Normalschnitt liefert, wird auch als Normalkrümmung $\kappa$ bezeichnet:
