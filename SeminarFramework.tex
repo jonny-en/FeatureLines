@@ -379,10 +379,16 @@ In diesem Abschnitt sollen die Ergebnisse der zugrundeliegenden Paper der Arbeit
 \subsection{Vergleich}
 \subsubsection{Demarcating Curves und Photic Extremum Lines}
 \subsubsection{Vergleich mit anderen Methoden}
+Die Autoren vergleichen in ihren Arbeiten die Demarcating Curves \cite{Demarcating} und Photic Extremum Lines \cite{Xie2007} mit einigen anderen verbreiteten Methoden. Beispielhaft wird hier auf die Vergleiche zu Suggestive Contours, sowie zu Ridges \& Valleys eingegangen. Für eine umfangreichere Ausführung und den Vergleich mit weiteren Methoden wird auf die Quellen verwiesen. 
+
 \textbf{Vergleich: Suggestive Contours}\\
+Da sowohl die Suggestive Contours, als auch die Demarcating Curves auf hyperbolen Regionen (also Regionen mit negativer Gauskrümmung) der Oberfläche liegen, lassen sich bei der Betrachtung viele Übereinstimmung bei den hervorgehobenen Strukturen erkennen. Genauer sind die Kurvenpunkte der Demarcating Curve eine Teilmenge der Vereinigung aller Suggestive Contours Punkte, aus allen möglichen Blickrichtungen betrachtet \cite{Demarcating}(siehe Abbildung: \todo{TO-DO}).  
+
 Die Photic Extremum Lines zeigen ihren Unterschied gegenüber den Suggestive Contours vor allem bei der Darstellung von Objekten, in denen sowohl konkave, als auch konvexe Oberflächen zu finden sind. Während bei Suggestive Contours ein Schwellwert gewählt werden muss, der meistens dafür sorgt, dass entweder konkave, oder konvexe Flächen detailliert dargestellt werden, so ist es mit den PELs möglich, beide Bereiche gleichzeitig darzustellen \cite{Xie2007}. Ersichtlich wird dies in Abbildung \ref{vglpel2}.
 
 \textbf{Vergleich: Ridges \& Valleys}\\
+Gegeben der Idee von Demarcating Curves (siehe \ref{defdem}) liegt die Vermutung Nahe, dass die Kurven zwischen den ''Hügeln und Tälern'' (Ridges \& Valleys) auf der Oberfläche verlaufen. Mathematisch lässt sich diesen Idee zwar modellieren \cite{Demarcating}, in der Praxis liegen die Demarcating Curves allerdings nicht zwischen den Kurven der Ridges \& Valleys (siehe Abbildung \todo{TODO}). In Abbildung \todo{TODO} wird deutlich, dass besonders abgeschlossene Strukturen (z.B. auf den Beinen der Figur) durch die Demarcating Curves deutlich besser hervorgehoben werden, als durch die Valley.
+
 Die Ergebnisse der Photic Extremum Lines weichen von denen der Ridges \& Valleys besonders bei der Darstellung weicher Strukturen ab.
 Weil Ridges \& Valleys mit der Stärke der Krümmung der Geometrie und nicht mit dem beleuchteten Objekt arbeiten, werden weiche Übergänge, die sich erst mittels Beleuchtung des Objekts bemerkbar machen, vernachlässigt (siehe Abbildung \ref{vglpel2}). 
 \begin{figure}
@@ -392,6 +398,7 @@ Weil Ridges \& Valleys mit der Stärke der Krümmung der Geometrie und nicht mit
 	\label{vglpel2}
 \end{figure}
 \subsection{Performance}
+Bei der Bestimmung von Demarcating Curves findet die gesamte Berechnung offline, also vor der Interaktion mit den Nutzern statt. Damit sind sie genauso schnell zu Berechnen wie die genannten Suggestive Contours und Ridges \& Valleys. Als einzige interaktive Komponente nennen Kolomenkin et al. \cite{Demarcating} einen Stärkeparameter, der als Schwellwert für die Vorberechneten Werte der Krümmungsableitung in Gradientenrichtung ($C_{ijk}g_p^ig_p^jg_p^k$) dient. Durch diesen Schwellwert lassen sich schwächere Kandidaten für die Kurvenpunkte eliminieren. Auf einem Testsystem (2.66 GHz Intel Core Duo) konnten die Autoren ein Mesh aus 50.000 Polygonen in 0.15 Sekunden bearbeiten. Für ein Mesh aus 500.000 Polygonen benötigte der Algorithmus 1.1 Sekunden. 
 
 Der Performance-Test der Photic Extremum Lines wurde von Xie et al. \cite{Xie2007} auf einem Desktop PC mit 3.2 GHz Xeon-Prozessor und 3GB Arbeitsspeicher durchgeführt. Die getesteten Modelle sind die im Paper verwendeten. Zwar ist das Verfahren auf komplizierten Objekten nicht Echtzeit-fähig, die Betrachtung sollte aber mit aktueller Technik zumindest bei simplen Modellen zufriedenstellend flüssig laufen.
 Wichtig ist zu erwähnen, dass sich diese Zeiten nur auf eine Betrachtung mit Kamerabewegung auswirken. Wird das Modell nur aus einer bestimmten Richtung betrachtet, kann der Zeitaufwand zur einmaligen Berechnung vernachlässigt werden. 
@@ -419,6 +426,8 @@ Kopf & 320K & 1.684 \\
 	\caption{Die Darstellung eines Kopfes mittels Photic Extremum Lines und anderer Feature Line Methoden im Vergleich zu einer von einem Künstler angefertigten Zeichnung. Es wird die große Übereinstimmung von den Linien des Zeichners und den Linien der PELs deutlich. \cite{Xie2007}}
 	\label{anwpel}
 \end{figure*}
+Mit den 
+
 Die Photic Extremum Lines charakterisieren die signifikanten Variationen der Beleuchtung auf 3D-Oberflächen. Dabei stehen dem Nutzer durch die Anzahl der Lichtquellen, die Lichtposition(en), und den Schwellwert eine hohe Auswahl an Anpassungsmöglichkeiten zur Verfügung. Da die Ergebnisse sehr stark an ein von Künstlern gezeichnetes Bild erinnern (siehe Abbildung \ref{ausblpel}) und damit unserer eigenen Wahrnehmung des Objekts sehr nahe kommen, können Photic Extremung Lines insbesondere für Anwendungen interessant sein, die sich auf die verständliche und illustrative Darstellung von Objekten konzentrieren. Auch eine von Xie et al \cite{Xie2007} durchgeführte Befragung unter Künstlern besagt, dass 9 von 10 Künstlern die Ergebnisse der PELs den der anderen vorgelegten Verfahren (Suggestive Contours, Ridges \& Valleys) vorziehen würden. 
 \section{Zusammenfassung/Schlussfolgerung/Ausblick}
 \begin{figure}
