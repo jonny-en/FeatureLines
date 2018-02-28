@@ -1,20 +1,37 @@
-\begin{thebibliography}{\uppercase{PHWF01}}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{\uppercase{FDCO03}}
+
+\bibitem[FDCO03]{Fleishman}
+\textsc{Fleishman S., Drori I., Cohen-Or D.}:
+\newblock Bilateral mesh denoising.
+\newblock \emph{ACM Trans. Graph. 22}, 3 (July 2003), 950--953.
 
 \bibitem[KST08]{Demarcating}
 \textsc{Kolomenkin M., Shimshoni I., Tal A.}:
 \newblock Demarcating curves for shape illustration.
 \newblock \emph{ACM Trans. Graph. 27}, 5 (Dec. 2008), 157:1--157:9.
 
-\bibitem[PHWF01]{Praun2001}
-\textsc{Praun E., Hoppe H., Webb M., Finkelstein A.}:
-\newblock Real-time hatching.
-\newblock In \emph{SIGGRAPH '01: Computer Graphics Proceedings} (2001), Fiume
-  E., (Ed.), pp.~579--584.
+\bibitem[MB02]{Voronoi}
+\textsc{M.Meyer M.~Desbrun P.~S., Barr A.}:
+\newblock Discretedifferential-geometry operators for triangulated 2-manifolds.
+\newblock \emph{VisMath} (2002), 35--57.
+
+\bibitem[OBS04]{Ohtake}
+\textsc{Ohtake Y., Belyaev A., Seidel H.-P.}:
+\newblock Ridge-valley lines on meshes via implicit surface fitting.
+\newblock \emph{ACM Trans. Graph. 23}, 3 (Aug. 2004), 609--612.
 
 \bibitem[Rus04]{CurvDeriv2004}
 \textsc{Rusinkiewicz S.}:
 \newblock Estimating curvatures and their derivatives on triangle meshes.
 \newblock In \emph{Symposium on 3D Data Processing, Visualization, and
   Transmission} (Sept. 2004).
+
+\bibitem[XHT{\etalchar{*}}07]{Xie2007}
+\textsc{Xie X., He Y., Tian F., Seah H.-S., Gu X., Hong~Qin M.}:
+\newblock An effective illustrative visualization framework based on photic
+  extremum lines (pels).
+\newblock \emph{IEEE Transactions on Visualization and Computer Graphics 13}, 6
+  (2007), 1328--1335.
 
 \end{thebibliography}

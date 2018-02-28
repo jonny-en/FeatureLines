@@ -61,9 +61,6 @@
 \section{Einleitung}
 \todo{TO-DO: Bernst und Englich - Einleitung Allgemein}
 \section{Grundlagen}
-\todo{TO-DO: Bernst und Englich}
-Pastor et al. \cite{Praun2001} präsentieren ein Technik unter Ausnutzung der Grafikhardware.
-
 
 \subsection{Gradient}
 
@@ -106,7 +103,7 @@ Zu beachten ist hierbei, dass die Normalkrümmung an einem Punkt einer Tangentia
 
 
 \section{Konzepte / Algorithmen}
-\todo{TO-DO: Bernst und Englich - kurze Einleitung Konzepte}
+Im Folgenden werden die beiden Methoden \textit{Demarcating Curves}\cite{Demarcating} und \textit{Photic Extremum Lines} \cite{Xie2007} zum Finden von Feature Lines auf 3D-Objekten vorgestellt. Es werden jeweils sowohl das Konzept und dessen Ablauf, als auch spezifische Umsetzungsdetails beschrieben.
 
 \subsection{Demarcating Curves}\label{demcurvlabel}
 Häufig reicht die reine Betrachtung eines Objektes nicht aus, um einen ausreichenden Eindruck über dessen Form und Beschaffenheit zu gewinnen. Während der Mensch mit dem Tastsinn ein weiteres Werkzeug zur Untersuchung der Oberfläche besitzt, werden in der Computergrafik Feature Lines auf dem Objekt gezeichnet. Da unterschiedliche Algorithmen auf einem Objekt zu ganz unterschiedliche Strukturen hervorheben können, existiert inzwischen eine große Menge an Methoden, die für unterschiedliche Anwendungsgebiete mal mehr, mal weniger gut geeignet sind. Kolomenkin et al. \cite{Demarcating} stellen mit den Demarcating Curves eine neue Art von Kurven vor, die vor allem auf dem Gebiet der Archäologie dabei helfen soll, Strukturen auf gefundenen Relikten sichtbar zu machen und diese zu digitalisieren.
@@ -243,7 +240,7 @@ D_{w}D_{w}||\nabla f || < 0
 \end{equation}
 beschrieben. Es lässt sich abschließend definieren:
 
-\textit{Die PEL ist die Menge aller Punkte der Oberfläche S, die den Bedingungen (\ref{eq:dw}) und (\ref{eq:dwdw}) genügen.}
+\textbf{Defintion.} \emph{Die PEL ist die Menge aller Punkte der Oberfläche S, die den Bedingungen (\ref{eq:dw}) und (\ref{eq:dwdw}) genügen.}\cite{Xie2007}
 \\\\
 Es wird deutlich, dass das Ergebnis sehr stark von der Beleuchtung des Objekts abhängt. Xie et al. schlagen deshalb sowohl eine Beleuchtungsfunktion selbst, als auch eine Positionierung der Lichter (Abschnitt \ref{belfkt}) vor.\\\\
 Zu beachten ist weiterhin, dass die partiellen Ableitungen (Schritt 1,2 und 3) nicht auf kontinuierlichen Oberflächen berechnet werden, sondern die einzelnen Punkte, bzw. Dreiecke des 3D-Objekts herangezogen werden müssen. Auch die Nullstellen können nicht implizit berechnet werden, sondern müssen mittels linearer Interpolation zwischen den Ergebnissen der einzelnen Punkte gefunden werden. Die genaue Vorgehensweise wird in Abschnitt \ref{pel-impl} beschrieben, in dem zusätzlich näher auf die Vorverarbeitung der Geometrie eingegangen wird.
@@ -260,7 +257,7 @@ Dieses setzt sich zunächst aus drei verschiedenen Termen zusammen. Dem ambiente
 \begin{equation}
 I = I_{amb} + I_{diff} + I_{spec}
 \end{equation}
-\\\\
+\\
 Aufgrund der Tatsachen, dass der ambiente Term nicht zum Unterschied in der Beleuchtung (Kontrast) beiträgt und der reflektierende Term vom Sichtvektor abhängig ist, beziehungsweise an spiegelnden Stellen entstehende Feature Lines generell wenig über die Struktur des Objekts aussagen, vereinfachen Xie et al. das Modell zu:
 \begin{equation}
 I = I_{diff} = k_{d}I_{d}\mathbf{n}*\mathbf{l}
@@ -348,7 +345,18 @@ Xie et al. empfehlen, einen zusätzlichen Schwellwert einzubinden, der diejenige
 \end{equation}
 Liegt der berechnete Wert unter einem vom Nutzer gesetzten Schwellwert, wird die Linie gelöscht.
 \section{Ergebnisse/Anwendungen/Diskussion}
-\todo{TO-DO: Bernst und Englich - Ergebnisse/Anwendungen/Diskussion}
+\subsection{Vergleich}
+\subsubsection{Demarcating Curves und Photic Extremum Lines}
+\subsubsection{Vergleich mit anderen Methoden}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.7\linewidth]{rabbit.png}
+	\caption{(a) und (d): Der nur durch das Hauptlicht beleuchtete Hase und zugehörige PELS. (b) und (c): Maximierung/Minimierung des Kontrasts der Beleuchtung des Bereiches um das Auge des Hasen mithilfe eines vor dem Auge positionierten Hilfslicht. (e) und (f): An den Grenzen der jeweiligen Bereiche sind in den zugehörigen PELs keine Unstetigkeiten erkennbar.}
+	\label{fig:rabbit}
+\end{figure}
+\subsection{Performance}
+\subsection{Ergebnisse und Anwendung}
+
 
 \begin{table}[htb]
 
